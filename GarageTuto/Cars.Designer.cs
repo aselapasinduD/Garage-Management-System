@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cars));
             panel1 = new Panel();
             carServicingTable = new Panel();
-            panel3 = new Panel();
+            carInformationTablePanel = new Panel();
             carInforamationDatePicker = new DateTimePicker();
             deleteButton = new Button();
             editButton = new Button();
@@ -49,7 +49,7 @@
             carNumberInput = new MaskedTextBox();
             carInformationLable = new Label();
             carServicingTableHead = new Label();
-            panel2 = new Panel();
+            menuPanel = new Panel();
             logoutMenuLable = new Label();
             analyticsMenuLable = new Label();
             billingMenuLable = new Label();
@@ -60,7 +60,7 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             panel1.SuspendLayout();
             carServicingTable.SuspendLayout();
-            panel2.SuspendLayout();
+            menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             SuspendLayout();
             // 
@@ -69,19 +69,18 @@
             panel1.BackColor = Color.Black;
             panel1.Controls.Add(carServicingTable);
             panel1.Controls.Add(carServicingTableHead);
-            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(menuPanel);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1429, 743);
+            panel1.Size = new Size(1350, 729);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // carServicingTable
             // 
             carServicingTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             carServicingTable.BackColor = Color.DarkGray;
-            carServicingTable.Controls.Add(panel3);
+            carServicingTable.Controls.Add(carInformationTablePanel);
             carServicingTable.Controls.Add(carInforamationDatePicker);
             carServicingTable.Controls.Add(deleteButton);
             carServicingTable.Controls.Add(editButton);
@@ -100,19 +99,18 @@
             carServicingTable.Location = new Point(185, 40);
             carServicingTable.Margin = new Padding(8);
             carServicingTable.Name = "carServicingTable";
-            carServicingTable.Size = new Size(1233, 691);
+            carServicingTable.Size = new Size(1154, 677);
             carServicingTable.TabIndex = 3;
-            carServicingTable.Paint += carServicingTable_Paint;
             // 
-            // panel3
+            // carInformationTablePanel
             // 
-            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel3.BackColor = Color.White;
-            panel3.Location = new Point(18, 221);
-            panel3.Margin = new Padding(8);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1197, 454);
-            panel3.TabIndex = 5;
+            carInformationTablePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            carInformationTablePanel.BackColor = Color.White;
+            carInformationTablePanel.Location = new Point(18, 207);
+            carInformationTablePanel.Margin = new Padding(8);
+            carInformationTablePanel.Name = "carInformationTablePanel";
+            carInformationTablePanel.Size = new Size(1118, 454);
+            carInformationTablePanel.TabIndex = 5;
             // 
             // carInforamationDatePicker
             // 
@@ -126,39 +124,39 @@
             deleteButton.BackColor = Color.Salmon;
             deleteButton.Cursor = Cursors.Hand;
             deleteButton.Font = new Font("Segoe UI", 12F);
-            deleteButton.Location = new Point(368, 164);
+            deleteButton.Location = new Point(368, 157);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(145, 33);
             deleteButton.TabIndex = 3;
             deleteButton.Text = "Delete";
             deleteButton.UseVisualStyleBackColor = false;
-            deleteButton.Click += button1_Click;
+            deleteButton.Click += deleteButton_Click;
             // 
             // editButton
             // 
             editButton.BackColor = Color.PaleGreen;
             editButton.Cursor = Cursors.Hand;
             editButton.Font = new Font("Segoe UI", 12F);
-            editButton.Location = new Point(193, 164);
+            editButton.Location = new Point(193, 157);
             editButton.Name = "editButton";
             editButton.Size = new Size(145, 33);
             editButton.TabIndex = 3;
             editButton.Text = "Edit";
             editButton.UseVisualStyleBackColor = false;
-            editButton.Click += button1_Click;
+            editButton.Click += editButton_Click;
             // 
             // addButton
             // 
             addButton.BackColor = Color.SkyBlue;
             addButton.Cursor = Cursors.Hand;
             addButton.Font = new Font("Segoe UI", 12F);
-            addButton.Location = new Point(18, 164);
+            addButton.Location = new Point(18, 157);
             addButton.Name = "addButton";
             addButton.Size = new Size(145, 33);
             addButton.TabIndex = 3;
             addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = false;
-            addButton.Click += button1_Click;
+            addButton.Click += addButton_Click;
             // 
             // ownerNameInputLable
             // 
@@ -217,7 +215,7 @@
             ownerNameInput.Name = "ownerNameInput";
             ownerNameInput.Size = new Size(200, 25);
             ownerNameInput.TabIndex = 1;
-            ownerNameInput.MaskInputRejected += maskedTextBox1_MaskInputRejected;
+            ownerNameInput.MaskInputRejected += ownerNameInput_MaskInputRejected;
             // 
             // carColorInput
             // 
@@ -226,7 +224,7 @@
             carColorInput.Name = "carColorInput";
             carColorInput.Size = new Size(200, 25);
             carColorInput.TabIndex = 1;
-            carColorInput.MaskInputRejected += maskedTextBox1_MaskInputRejected;
+            carColorInput.MaskInputRejected += carColorInput_MaskInputRejected;
             // 
             // carModelInput
             // 
@@ -235,7 +233,7 @@
             carModelInput.Name = "carModelInput";
             carModelInput.Size = new Size(200, 25);
             carModelInput.TabIndex = 1;
-            carModelInput.MaskInputRejected += maskedTextBox1_MaskInputRejected;
+            carModelInput.MaskInputRejected += carModelInput_MaskInputRejected;
             // 
             // carBrandInput
             // 
@@ -244,7 +242,7 @@
             carBrandInput.Name = "carBrandInput";
             carBrandInput.Size = new Size(200, 25);
             carBrandInput.TabIndex = 1;
-            carBrandInput.MaskInputRejected += maskedTextBox1_MaskInputRejected;
+            carBrandInput.MaskInputRejected += carBrandInput_MaskInputRejected;
             // 
             // carNumberInput
             // 
@@ -253,19 +251,18 @@
             carNumberInput.Name = "carNumberInput";
             carNumberInput.Size = new Size(200, 25);
             carNumberInput.TabIndex = 1;
-            carNumberInput.MaskInputRejected += maskedTextBox1_MaskInputRejected;
+            carNumberInput.MaskInputRejected += carNumberInput_MaskInputRejected;
             // 
             // carInformationLable
             // 
             carInformationLable.AutoSize = true;
             carInformationLable.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
             carInformationLable.ForeColor = Color.White;
-            carInformationLable.Location = new Point(3, 11);
+            carInformationLable.Location = new Point(3, 12);
             carInformationLable.Name = "carInformationLable";
             carInformationLable.Size = new Size(170, 30);
             carInformationLable.TabIndex = 0;
             carInformationLable.Text = "Car Information";
-            carInformationLable.Click += label1_Click_1;
             // 
             // carServicingTableHead
             // 
@@ -278,23 +275,22 @@
             carServicingTableHead.Size = new Size(288, 31);
             carServicingTableHead.TabIndex = 2;
             carServicingTableHead.Text = "Record Cars for Servicing";
-            carServicingTableHead.Click += label1_Click;
             // 
-            // panel2
+            // menuPanel
             // 
-            panel2.BackColor = Color.Gray;
-            panel2.Controls.Add(logoutMenuLable);
-            panel2.Controls.Add(analyticsMenuLable);
-            panel2.Controls.Add(billingMenuLable);
-            panel2.Controls.Add(employeesMenuLable);
-            panel2.Controls.Add(stockMenuLable);
-            panel2.Controls.Add(carMenuLable);
-            panel2.Controls.Add(carPictureLogo);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(169, 743);
-            panel2.TabIndex = 0;
+            menuPanel.BackColor = Color.Gray;
+            menuPanel.Controls.Add(logoutMenuLable);
+            menuPanel.Controls.Add(analyticsMenuLable);
+            menuPanel.Controls.Add(billingMenuLable);
+            menuPanel.Controls.Add(employeesMenuLable);
+            menuPanel.Controls.Add(stockMenuLable);
+            menuPanel.Controls.Add(carMenuLable);
+            menuPanel.Controls.Add(carPictureLogo);
+            menuPanel.Dock = DockStyle.Left;
+            menuPanel.Location = new Point(0, 0);
+            menuPanel.Name = "menuPanel";
+            menuPanel.Size = new Size(169, 729);
+            menuPanel.TabIndex = 0;
             // 
             // logoutMenuLable
             // 
@@ -307,7 +303,7 @@
             logoutMenuLable.Size = new Size(82, 30);
             logoutMenuLable.TabIndex = 2;
             logoutMenuLable.Text = "Logout";
-            logoutMenuLable.Click += label6_Click;
+            logoutMenuLable.Click += logoutMenuLable_Click;
             // 
             // analyticsMenuLable
             // 
@@ -319,6 +315,7 @@
             analyticsMenuLable.Size = new Size(154, 30);
             analyticsMenuLable.TabIndex = 2;
             analyticsMenuLable.Text = "Analytics";
+            analyticsMenuLable.Click += analyticsMenuLable_Click;
             // 
             // billingMenuLable
             // 
@@ -330,6 +327,7 @@
             billingMenuLable.Size = new Size(154, 30);
             billingMenuLable.TabIndex = 2;
             billingMenuLable.Text = "Billing";
+            billingMenuLable.Click += billingMenuLable_Click;
             // 
             // employeesMenuLable
             // 
@@ -341,6 +339,7 @@
             employeesMenuLable.Size = new Size(154, 30);
             employeesMenuLable.TabIndex = 2;
             employeesMenuLable.Text = "Employees";
+            employeesMenuLable.Click += employeesMenuLable_Click;
             // 
             // stockMenuLable
             // 
@@ -352,7 +351,7 @@
             stockMenuLable.Size = new Size(154, 30);
             stockMenuLable.TabIndex = 2;
             stockMenuLable.Text = "Stock";
-            stockMenuLable.Click += label1_Click_2;
+            stockMenuLable.Click += stockMenuLable_Click;
             // 
             // carMenuLable
             // 
@@ -364,7 +363,7 @@
             carMenuLable.Size = new Size(154, 30);
             carMenuLable.TabIndex = 0;
             carMenuLable.Text = "Cars";
-            carMenuLable.Click += label2_Click_1;
+            carMenuLable.Click += carMenuLable_Click;
             // 
             // carPictureLogo
             // 
@@ -376,6 +375,7 @@
             carPictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
             carPictureLogo.TabIndex = 1;
             carPictureLogo.TabStop = false;
+            carPictureLogo.Click += carPictureLogo_Click;
             // 
             // contextMenuStrip1
             // 
@@ -387,17 +387,18 @@
             AccessibleName = "";
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1429, 743);
+            ClientSize = new Size(1350, 729);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(1366, 768);
             Name = "Cars";
-            Text = "Form1";
+            Text = "Garage Managment System(GSM)";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             carServicingTable.ResumeLayout(false);
             carServicingTable.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            menuPanel.ResumeLayout(false);
+            menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).EndInit();
             ResumeLayout(false);
         }
@@ -405,7 +406,7 @@
         #endregion
 
         private Panel panel1;
-        private Panel panel2;
+        private Panel menuPanel;
         private PictureBox carPictureLogo;
         private Label carServicingTableHead;
         private Panel carServicingTable;
@@ -425,7 +426,7 @@
         private Button deleteButton;
         private Button editButton;
         private DateTimePicker carInforamationDatePicker;
-        private Panel panel3;
+        private Panel carInformationTablePanel;
         private Label carMenuLable;
         private Label analyticsMenuLable;
         private Label billingMenuLable;

@@ -1,39 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GarageTuto
 {
-    public partial class Cars : Form
+    public partial class Stock : Form
     {
-        public Cars()
+        public Stock()
         {
             InitializeComponent();
         }
 
-        private void ownerNameInput_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void PriceInput_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
 
-        private void carColorInput_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void quantityInput_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
-
-        private void carModelInput_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void partNumberInput_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
-
-        private void carBrandInput_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void carNumberInput_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
 
         private void addButton_Click(object sender, EventArgs e)
         {
@@ -50,17 +47,13 @@ namespace GarageTuto
             Debug.WriteLine("Delete Button is Clicked");
         }
 
+        // Menu Click Events
         private void carMenuLable_Click(object sender, EventArgs e)
         {
 
         }
 
         private void stockMenuLable_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void carPictureLogo_Click(object sender, EventArgs e)
         {
 
         }
@@ -84,6 +77,5 @@ namespace GarageTuto
         {
 
         }
-
     }
 }
