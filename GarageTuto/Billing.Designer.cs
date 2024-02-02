@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Billing));
             menuPanel = new Panel();
             logoutMenuLable = new Label();
@@ -49,7 +48,6 @@
             carBrandInputLable = new Label();
             carNumberInputLable = new Label();
             ownerNameInput = new MaskedTextBox();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             carColorInput = new MaskedTextBox();
             carModelInput = new MaskedTextBox();
             carBrandInput = new MaskedTextBox();
@@ -269,11 +267,6 @@
             ownerNameInput.Size = new Size(200, 25);
             ownerNameInput.TabIndex = 1;
             // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
-            // 
             // carColorInput
             // 
             carColorInput.Font = new Font("Segoe UI", 10F);
@@ -408,7 +401,6 @@
         private Label carBrandInputLable;
         private Label carNumberInputLable;
         private MaskedTextBox ownerNameInput;
-        private ContextMenuStrip contextMenuStrip1;
         private MaskedTextBox carColorInput;
         private MaskedTextBox carModelInput;
         private MaskedTextBox carBrandInput;

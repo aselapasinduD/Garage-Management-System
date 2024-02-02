@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stock));
-            contextMenuStrip1 = new ContextMenuStrip(components);
             logoutMenuLable = new Label();
             analyticsMenuLable = new Label();
             billingMenuLable = new Label();
@@ -58,11 +56,6 @@
             panel1.SuspendLayout();
             carServicingTable.SuspendLayout();
             SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // logoutMenuLable
             // 
@@ -347,8 +340,6 @@
         }
 
         #endregion
-
-        private ContextMenuStrip contextMenuStrip1;
         private Label logoutMenuLable;
         private Label analyticsMenuLable;
         private Label billingMenuLable;

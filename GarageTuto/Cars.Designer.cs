@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cars));
             panel1 = new Panel();
             carServicingTable = new Panel();
@@ -57,7 +56,6 @@
             stockMenuLable = new Label();
             carMenuLable = new Label();
             carPictureLogo = new PictureBox();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             panel1.SuspendLayout();
             carServicingTable.SuspendLayout();
             menuPanel.SuspendLayout();
@@ -377,11 +375,6 @@
             carPictureLogo.TabStop = false;
             carPictureLogo.Click += carPictureLogo_Click;
             // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
-            // 
             // Cars
             // 
             AccessibleName = "";
@@ -410,7 +403,6 @@
         private PictureBox carPictureLogo;
         private Label carServicingTitleHead;
         private Panel carServicingTable;
-        private ContextMenuStrip contextMenuStrip1;
         private MaskedTextBox carNumberInput;
         private Label carInformationLableHead;
         private Label carNumberInputLable;

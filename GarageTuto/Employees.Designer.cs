@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employees));
             deleteButton = new Button();
             editButton = new Button();
@@ -39,7 +38,6 @@
             employeePasswordInput = new MaskedTextBox();
             employeeAddressInput = new MaskedTextBox();
             employeeInformationLableHead = new Label();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             employeeNameInput = new MaskedTextBox();
             panel1 = new Panel();
             carServicingTable = new Panel();
@@ -152,11 +150,6 @@
             employeeInformationLableHead.Size = new Size(234, 30);
             employeeInformationLableHead.TabIndex = 0;
             employeeInformationLableHead.Text = "Employee Information";
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // employeeNameInput
             // 
@@ -358,7 +351,6 @@
         private MaskedTextBox employeePasswordInput;
         private MaskedTextBox employeeAddressInput;
         private Label employeeInformationLableHead;
-        private ContextMenuStrip contextMenuStrip1;
         private MaskedTextBox employeeNameInput;
         private Panel panel1;
         private Panel carServicingTable;
