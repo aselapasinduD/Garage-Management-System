@@ -18,7 +18,7 @@ namespace GarageTuto
             InitializeComponent();
         }
 
-        private void PriceInput_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void priceInput_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

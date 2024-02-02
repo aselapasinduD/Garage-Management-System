@@ -37,7 +37,7 @@
             employeesMenuLable = new Label();
             stockMenuLable = new Label();
             carMenuLable = new Label();
-            carServicingTableHead = new Label();
+            partTableTitleHead = new Label();
             menuPanel = new Panel();
             carPictureLogo = new PictureBox();
             carInformationTablePanel = new Panel();
@@ -46,13 +46,13 @@
             deleteButton = new Button();
             editButton = new Button();
             addButton = new Button();
-            PriceInputLable = new Label();
+            priceInputLable = new Label();
             quantityInputLable = new Label();
             partNumberInputLable = new Label();
-            PriceInput = new MaskedTextBox();
+            priceInput = new MaskedTextBox();
             quantityInput = new MaskedTextBox();
             partNumberInput = new MaskedTextBox();
-            carInformationLable = new Label();
+            partsInformationLableHead = new Label();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             panel1.SuspendLayout();
@@ -137,17 +137,17 @@
             carMenuLable.Text = "Cars";
             carMenuLable.Click += carMenuLable_Click;
             // 
-            // carServicingTableHead
+            // partTableTitleHead
             // 
-            carServicingTableHead.AutoSize = true;
-            carServicingTableHead.BackColor = Color.Transparent;
-            carServicingTableHead.Font = new Font("Arial Narrow", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            carServicingTableHead.ForeColor = Color.White;
-            carServicingTableHead.Location = new Point(185, 6);
-            carServicingTableHead.Name = "carServicingTableHead";
-            carServicingTableHead.Size = new Size(288, 31);
-            carServicingTableHead.TabIndex = 2;
-            carServicingTableHead.Text = "Record Cars for Servicing";
+            partTableTitleHead.AutoSize = true;
+            partTableTitleHead.BackColor = Color.Transparent;
+            partTableTitleHead.Font = new Font("Arial Narrow", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            partTableTitleHead.ForeColor = Color.White;
+            partTableTitleHead.Location = new Point(185, 6);
+            partTableTitleHead.Name = "partTableTitleHead";
+            partTableTitleHead.Size = new Size(288, 31);
+            partTableTitleHead.TabIndex = 2;
+            partTableTitleHead.Text = "Record Cars for Servicing";
             // 
             // menuPanel
             // 
@@ -180,17 +180,17 @@
             // 
             carInformationTablePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             carInformationTablePanel.BackColor = Color.White;
-            carInformationTablePanel.Location = new Point(18, 170);
+            carInformationTablePanel.Location = new Point(18, 164);
             carInformationTablePanel.Margin = new Padding(8);
             carInformationTablePanel.Name = "carInformationTablePanel";
-            carInformationTablePanel.Size = new Size(1118, 491);
+            carInformationTablePanel.Size = new Size(1118, 497);
             carInformationTablePanel.TabIndex = 5;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
             panel1.Controls.Add(carServicingTable);
-            panel1.Controls.Add(carServicingTableHead);
+            panel1.Controls.Add(partTableTitleHead);
             panel1.Controls.Add(menuPanel);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -206,13 +206,13 @@
             carServicingTable.Controls.Add(deleteButton);
             carServicingTable.Controls.Add(editButton);
             carServicingTable.Controls.Add(addButton);
-            carServicingTable.Controls.Add(PriceInputLable);
+            carServicingTable.Controls.Add(priceInputLable);
             carServicingTable.Controls.Add(quantityInputLable);
             carServicingTable.Controls.Add(partNumberInputLable);
-            carServicingTable.Controls.Add(PriceInput);
+            carServicingTable.Controls.Add(priceInput);
             carServicingTable.Controls.Add(quantityInput);
             carServicingTable.Controls.Add(partNumberInput);
-            carServicingTable.Controls.Add(carInformationLable);
+            carServicingTable.Controls.Add(partsInformationLableHead);
             carServicingTable.Location = new Point(185, 40);
             carServicingTable.Margin = new Padding(8);
             carServicingTable.Name = "carServicingTable";
@@ -224,7 +224,7 @@
             deleteButton.BackColor = Color.Salmon;
             deleteButton.Cursor = Cursors.Hand;
             deleteButton.Font = new Font("Segoe UI", 12F);
-            deleteButton.Location = new Point(368, 117);
+            deleteButton.Location = new Point(368, 114);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(145, 33);
             deleteButton.TabIndex = 3;
@@ -237,7 +237,7 @@
             editButton.BackColor = Color.PaleGreen;
             editButton.Cursor = Cursors.Hand;
             editButton.Font = new Font("Segoe UI", 12F);
-            editButton.Location = new Point(193, 117);
+            editButton.Location = new Point(193, 114);
             editButton.Name = "editButton";
             editButton.Size = new Size(145, 33);
             editButton.TabIndex = 3;
@@ -250,7 +250,7 @@
             addButton.BackColor = Color.SkyBlue;
             addButton.Cursor = Cursors.Hand;
             addButton.Font = new Font("Segoe UI", 12F);
-            addButton.Location = new Point(18, 117);
+            addButton.Location = new Point(18, 114);
             addButton.Name = "addButton";
             addButton.Size = new Size(145, 33);
             addButton.TabIndex = 3;
@@ -258,15 +258,15 @@
             addButton.UseVisualStyleBackColor = false;
             addButton.Click += addButton_Click;
             // 
-            // PriceInputLable
+            // priceInputLable
             // 
-            PriceInputLable.AutoSize = true;
-            PriceInputLable.Font = new Font("Segoe UI", 12F);
-            PriceInputLable.Location = new Point(472, 48);
-            PriceInputLable.Name = "PriceInputLable";
-            PriceInputLable.Size = new Size(44, 21);
-            PriceInputLable.TabIndex = 2;
-            PriceInputLable.Text = "Price";
+            priceInputLable.AutoSize = true;
+            priceInputLable.Font = new Font("Segoe UI", 12F);
+            priceInputLable.Location = new Point(472, 48);
+            priceInputLable.Name = "priceInputLable";
+            priceInputLable.Size = new Size(44, 21);
+            priceInputLable.TabIndex = 2;
+            priceInputLable.Text = "Price";
             // 
             // quantityInputLable
             // 
@@ -288,14 +288,14 @@
             partNumberInputLable.TabIndex = 2;
             partNumberInputLable.Text = "Part Number";
             // 
-            // PriceInput
+            // priceInput
             // 
-            PriceInput.Font = new Font("Segoe UI", 10F);
-            PriceInput.Location = new Point(472, 72);
-            PriceInput.Name = "PriceInput";
-            PriceInput.Size = new Size(200, 25);
-            PriceInput.TabIndex = 1;
-            PriceInput.MaskInputRejected += PriceInput_MaskInputRejected;
+            priceInput.Font = new Font("Segoe UI", 10F);
+            priceInput.Location = new Point(472, 72);
+            priceInput.Name = "priceInput";
+            priceInput.Size = new Size(200, 25);
+            priceInput.TabIndex = 1;
+            priceInput.MaskInputRejected += priceInput_MaskInputRejected;
             // 
             // quantityInput
             // 
@@ -315,16 +315,16 @@
             partNumberInput.TabIndex = 1;
             partNumberInput.MaskInputRejected += partNumberInput_MaskInputRejected;
             // 
-            // carInformationLable
+            // partsInformationLableHead
             // 
-            carInformationLable.AutoSize = true;
-            carInformationLable.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
-            carInformationLable.ForeColor = Color.White;
-            carInformationLable.Location = new Point(3, 12);
-            carInformationLable.Name = "carInformationLable";
-            carInformationLable.Size = new Size(186, 30);
-            carInformationLable.TabIndex = 0;
-            carInformationLable.Text = "Parts Information";
+            partsInformationLableHead.AutoSize = true;
+            partsInformationLableHead.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
+            partsInformationLableHead.ForeColor = Color.White;
+            partsInformationLableHead.Location = new Point(3, 12);
+            partsInformationLableHead.Name = "partsInformationLableHead";
+            partsInformationLableHead.Size = new Size(186, 30);
+            partsInformationLableHead.TabIndex = 0;
+            partsInformationLableHead.Text = "Parts Information";
             // 
             // Stock
             // 
@@ -332,6 +332,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1350, 729);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(1366, 768);
             Name = "Stock";
             Text = "Garage Managment System(GSM)";
@@ -354,7 +355,7 @@
         private Label employeesMenuLable;
         private Label stockMenuLable;
         private Label carMenuLable;
-        private Label carServicingTableHead;
+        private Label partTableTitleHead;
         private Panel menuPanel;
         private PictureBox carPictureLogo;
         private Panel carInformationTablePanel;
@@ -363,12 +364,12 @@
         private Button deleteButton;
         private Button editButton;
         private Button addButton;
-        private Label PriceInputLable;
+        private Label priceInputLable;
         private Label quantityInputLable;
         private Label partNumberInputLable;
-        private MaskedTextBox PriceInput;
+        private MaskedTextBox priceInput;
         private MaskedTextBox quantityInput;
         private MaskedTextBox partNumberInput;
-        private Label carInformationLable;
+        private Label partsInformationLableHead;
     }
 }

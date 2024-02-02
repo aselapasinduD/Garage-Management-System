@@ -47,8 +47,8 @@
             carModelInput = new MaskedTextBox();
             carBrandInput = new MaskedTextBox();
             carNumberInput = new MaskedTextBox();
-            carInformationLable = new Label();
-            carServicingTableHead = new Label();
+            carInformationLableHead = new Label();
+            carServicingTitleHead = new Label();
             menuPanel = new Panel();
             logoutMenuLable = new Label();
             analyticsMenuLable = new Label();
@@ -68,7 +68,7 @@
             // 
             panel1.BackColor = Color.Black;
             panel1.Controls.Add(carServicingTable);
-            panel1.Controls.Add(carServicingTableHead);
+            panel1.Controls.Add(carServicingTitleHead);
             panel1.Controls.Add(menuPanel);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -95,7 +95,7 @@
             carServicingTable.Controls.Add(carModelInput);
             carServicingTable.Controls.Add(carBrandInput);
             carServicingTable.Controls.Add(carNumberInput);
-            carServicingTable.Controls.Add(carInformationLable);
+            carServicingTable.Controls.Add(carInformationLableHead);
             carServicingTable.Location = new Point(185, 40);
             carServicingTable.Margin = new Padding(8);
             carServicingTable.Name = "carServicingTable";
@@ -253,28 +253,28 @@
             carNumberInput.TabIndex = 1;
             carNumberInput.MaskInputRejected += carNumberInput_MaskInputRejected;
             // 
-            // carInformationLable
+            // carInformationLableHead
             // 
-            carInformationLable.AutoSize = true;
-            carInformationLable.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
-            carInformationLable.ForeColor = Color.White;
-            carInformationLable.Location = new Point(3, 12);
-            carInformationLable.Name = "carInformationLable";
-            carInformationLable.Size = new Size(170, 30);
-            carInformationLable.TabIndex = 0;
-            carInformationLable.Text = "Car Information";
+            carInformationLableHead.AutoSize = true;
+            carInformationLableHead.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
+            carInformationLableHead.ForeColor = Color.White;
+            carInformationLableHead.Location = new Point(3, 12);
+            carInformationLableHead.Name = "carInformationLableHead";
+            carInformationLableHead.Size = new Size(170, 30);
+            carInformationLableHead.TabIndex = 0;
+            carInformationLableHead.Text = "Car Information";
             // 
-            // carServicingTableHead
+            // carServicingTitleHead
             // 
-            carServicingTableHead.AutoSize = true;
-            carServicingTableHead.BackColor = Color.Transparent;
-            carServicingTableHead.Font = new Font("Arial Narrow", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            carServicingTableHead.ForeColor = Color.White;
-            carServicingTableHead.Location = new Point(185, 6);
-            carServicingTableHead.Name = "carServicingTableHead";
-            carServicingTableHead.Size = new Size(288, 31);
-            carServicingTableHead.TabIndex = 2;
-            carServicingTableHead.Text = "Record Cars for Servicing";
+            carServicingTitleHead.AutoSize = true;
+            carServicingTitleHead.BackColor = Color.Transparent;
+            carServicingTitleHead.Font = new Font("Arial Narrow", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            carServicingTitleHead.ForeColor = Color.White;
+            carServicingTitleHead.Location = new Point(185, 6);
+            carServicingTitleHead.Name = "carServicingTitleHead";
+            carServicingTitleHead.Size = new Size(288, 31);
+            carServicingTitleHead.TabIndex = 2;
+            carServicingTitleHead.Text = "Record Cars for Servicing";
             // 
             // menuPanel
             // 
@@ -408,11 +408,11 @@
         private Panel panel1;
         private Panel menuPanel;
         private PictureBox carPictureLogo;
-        private Label carServicingTableHead;
+        private Label carServicingTitleHead;
         private Panel carServicingTable;
         private ContextMenuStrip contextMenuStrip1;
         private MaskedTextBox carNumberInput;
-        private Label carInformationLable;
+        private Label carInformationLableHead;
         private Label carNumberInputLable;
         private Label ownerNameInputLable;
         private Label carColorInputLable;

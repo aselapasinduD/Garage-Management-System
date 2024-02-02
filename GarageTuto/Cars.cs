@@ -57,7 +57,7 @@ namespace GarageTuto
 
         private void stockMenuLable_Click(object sender, EventArgs e)
         {
-
+ 
         }
 
         private void carPictureLogo_Click(object sender, EventArgs e)
