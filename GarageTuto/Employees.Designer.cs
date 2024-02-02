@@ -333,9 +333,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1350, 729);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(1366, 768);
             Name = "Employees";
-            Text = "Employees";
+            Text = "Garage Managment System(GSM)";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             carServicingTable.ResumeLayout(false);
