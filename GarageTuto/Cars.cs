@@ -1,4 +1,6 @@
 using System.Diagnostics;
+using System.Data.SqlClient;
+using System.Text;
 
 namespace GarageTuto
 {
@@ -8,7 +10,7 @@ namespace GarageTuto
         {
             InitializeComponent();
         }
-
+        SqlConnection Database = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\asela\\OneDrive\\Documents\\GMSDatabase.mdf;Integrated Security=True;Connect Timeout=30");
         private void ownerNameInput_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
@@ -37,6 +39,14 @@ namespace GarageTuto
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            bool checkInput = carNumberInput.Text == "" || carBrandInput.Text == "" || carModelInput.Text == "" || carColorInput.Text == "" || ownerNameInput.Text == "";
+            if (checkInput)
+            {
+                CustomMessageBox msgBox = new CustomMessageBox();
+                msgBox.Show("Warning", "Empty Data Input Error");
+                return;
+            }
+
             Debug.WriteLine("Add Button is Clicked");
         }
 
@@ -57,7 +67,7 @@ namespace GarageTuto
 
         private void stockMenuLable_Click(object sender, EventArgs e)
         {
- 
+
         }
 
         private void carPictureLogo_Click(object sender, EventArgs e)
@@ -85,5 +95,9 @@ namespace GarageTuto
 
         }
 
+        private void carInforamationDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

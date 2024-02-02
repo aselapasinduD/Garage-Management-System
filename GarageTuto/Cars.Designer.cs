@@ -32,7 +32,7 @@
             panel1 = new Panel();
             carServicingTable = new Panel();
             carInformationTablePanel = new Panel();
-            carInforamationDatePicker = new DateTimePicker();
+            carInforamationDate = new DateTimePicker();
             deleteButton = new Button();
             editButton = new Button();
             addButton = new Button();
@@ -79,7 +79,7 @@
             carServicingTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             carServicingTable.BackColor = Color.DarkGray;
             carServicingTable.Controls.Add(carInformationTablePanel);
-            carServicingTable.Controls.Add(carInforamationDatePicker);
+            carServicingTable.Controls.Add(carInforamationDate);
             carServicingTable.Controls.Add(deleteButton);
             carServicingTable.Controls.Add(editButton);
             carServicingTable.Controls.Add(addButton);
@@ -110,12 +110,13 @@
             carInformationTablePanel.Size = new Size(1118, 454);
             carInformationTablePanel.TabIndex = 5;
             // 
-            // carInforamationDatePicker
+            // carInforamationDate
             // 
-            carInforamationDatePicker.Location = new Point(18, 53);
-            carInforamationDatePicker.Name = "carInforamationDatePicker";
-            carInforamationDatePicker.Size = new Size(200, 23);
-            carInforamationDatePicker.TabIndex = 4;
+            carInforamationDate.Location = new Point(18, 53);
+            carInforamationDate.Name = "carInforamationDate";
+            carInforamationDate.Size = new Size(200, 23);
+            carInforamationDate.TabIndex = 4;
+            carInforamationDate.ValueChanged += carInforamationDate_ValueChanged;
             // 
             // deleteButton
             // 
@@ -249,6 +250,7 @@
             carNumberInput.Name = "carNumberInput";
             carNumberInput.Size = new Size(200, 25);
             carNumberInput.TabIndex = 1;
+            carNumberInput.ValidatingType = typeof(int);
             carNumberInput.MaskInputRejected += carNumberInput_MaskInputRejected;
             // 
             // carInformationLableHead
@@ -417,7 +419,7 @@
         private Button addButton;
         private Button deleteButton;
         private Button editButton;
-        private DateTimePicker carInforamationDatePicker;
+        private DateTimePicker carInforamationDate;
         private Panel carInformationTablePanel;
         private Label carMenuLable;
         private Label analyticsMenuLable;
