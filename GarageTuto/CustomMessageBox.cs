@@ -12,7 +12,14 @@ namespace GarageTuto
                 form.ClientSize = new Size(260, 100);
                 form.FormBorderStyle = FormBorderStyle.FixedDialog;
                 form.StartPosition = FormStartPosition.CenterParent;
-                form.Icon = new Icon("icon/icons-warning.ico");
+                if (title == "Success")
+                {
+                    form.Icon = new Icon("icon/icons-success.ico");
+                }
+                else
+                {
+                    form.Icon = new Icon("icon/icons-warning.ico");
+                }
 
                 Label lblMessage = new Label()
                 {

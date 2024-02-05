@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cars));
             panel1 = new Panel();
             carServicingTable = new Panel();
-            carInformationTablePanel = new Panel();
-            carInforamationDate = new DateTimePicker();
+            carInformationDataGrid = new DataGridView();
+            carInformationDate = new DateTimePicker();
             deleteButton = new Button();
             editButton = new Button();
             addButton = new Button();
@@ -58,6 +61,7 @@
             carPictureLogo = new PictureBox();
             panel1.SuspendLayout();
             carServicingTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)carInformationDataGrid).BeginInit();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             SuspendLayout();
@@ -78,8 +82,8 @@
             // 
             carServicingTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             carServicingTable.BackColor = Color.DarkGray;
-            carServicingTable.Controls.Add(carInformationTablePanel);
-            carServicingTable.Controls.Add(carInforamationDate);
+            carServicingTable.Controls.Add(carInformationDataGrid);
+            carServicingTable.Controls.Add(carInformationDate);
             carServicingTable.Controls.Add(deleteButton);
             carServicingTable.Controls.Add(editButton);
             carServicingTable.Controls.Add(addButton);
@@ -100,23 +104,56 @@
             carServicingTable.Size = new Size(1154, 677);
             carServicingTable.TabIndex = 3;
             // 
-            // carInformationTablePanel
+            // carInformationDataGrid
             // 
-            carInformationTablePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            carInformationTablePanel.BackColor = Color.White;
-            carInformationTablePanel.Location = new Point(18, 207);
-            carInformationTablePanel.Margin = new Padding(8);
-            carInformationTablePanel.Name = "carInformationTablePanel";
-            carInformationTablePanel.Size = new Size(1118, 454);
-            carInformationTablePanel.TabIndex = 5;
+            carInformationDataGrid.AllowUserToAddRows = false;
+            carInformationDataGrid.AllowUserToDeleteRows = false;
+            carInformationDataGrid.AllowUserToResizeColumns = false;
+            carInformationDataGrid.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.Transparent;
+            carInformationDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            carInformationDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            carInformationDataGrid.BackgroundColor = SystemColors.Info;
+            carInformationDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            carInformationDataGrid.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            carInformationDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Transparent;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            carInformationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            carInformationDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            carInformationDataGrid.GridColor = Color.Black;
+            carInformationDataGrid.Location = new Point(18, 207);
+            carInformationDataGrid.Name = "carInformationDataGrid";
+            carInformationDataGrid.ReadOnly = true;
+            carInformationDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.IndianRed;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.NullValue = "No Data in the Database";
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            carInformationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            carInformationDataGrid.RowTemplate.Height = 30;
+            carInformationDataGrid.ScrollBars = ScrollBars.Horizontal;
+            carInformationDataGrid.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            carInformationDataGrid.Size = new Size(1118, 454);
+            carInformationDataGrid.TabIndex = 0;
             // 
-            // carInforamationDate
+            // carInformationDate
             // 
-            carInforamationDate.Location = new Point(18, 53);
-            carInforamationDate.Name = "carInforamationDate";
-            carInforamationDate.Size = new Size(200, 23);
-            carInforamationDate.TabIndex = 4;
-            carInforamationDate.ValueChanged += carInforamationDate_ValueChanged;
+            carInformationDate.CustomFormat = "";
+            carInformationDate.Location = new Point(18, 53);
+            carInformationDate.Name = "carInformationDate";
+            carInformationDate.Size = new Size(200, 23);
+            carInformationDate.TabIndex = 4;
+            carInformationDate.ValueChanged += carInforamationDate_ValueChanged;
             // 
             // deleteButton
             // 
@@ -214,7 +251,6 @@
             ownerNameInput.Name = "ownerNameInput";
             ownerNameInput.Size = new Size(200, 25);
             ownerNameInput.TabIndex = 1;
-            ownerNameInput.MaskInputRejected += ownerNameInput_MaskInputRejected;
             // 
             // carColorInput
             // 
@@ -223,7 +259,6 @@
             carColorInput.Name = "carColorInput";
             carColorInput.Size = new Size(200, 25);
             carColorInput.TabIndex = 1;
-            carColorInput.MaskInputRejected += carColorInput_MaskInputRejected;
             // 
             // carModelInput
             // 
@@ -232,7 +267,6 @@
             carModelInput.Name = "carModelInput";
             carModelInput.Size = new Size(200, 25);
             carModelInput.TabIndex = 1;
-            carModelInput.MaskInputRejected += carModelInput_MaskInputRejected;
             // 
             // carBrandInput
             // 
@@ -241,17 +275,18 @@
             carBrandInput.Name = "carBrandInput";
             carBrandInput.Size = new Size(200, 25);
             carBrandInput.TabIndex = 1;
-            carBrandInput.MaskInputRejected += carBrandInput_MaskInputRejected;
             // 
             // carNumberInput
             // 
+            carNumberInput.AsciiOnly = true;
             carNumberInput.Font = new Font("Segoe UI", 10F);
+            carNumberInput.HidePromptOnLeave = true;
             carNumberInput.Location = new Point(18, 115);
+            carNumberInput.Mask = ">AAAAAAAAAA";
             carNumberInput.Name = "carNumberInput";
             carNumberInput.Size = new Size(200, 25);
             carNumberInput.TabIndex = 1;
             carNumberInput.ValidatingType = typeof(int);
-            carNumberInput.MaskInputRejected += carNumberInput_MaskInputRejected;
             // 
             // carInformationLableHead
             // 
@@ -392,6 +427,7 @@
             panel1.PerformLayout();
             carServicingTable.ResumeLayout(false);
             carServicingTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)carInformationDataGrid).EndInit();
             menuPanel.ResumeLayout(false);
             menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).EndInit();
@@ -419,13 +455,13 @@
         private Button addButton;
         private Button deleteButton;
         private Button editButton;
-        private DateTimePicker carInforamationDate;
-        private Panel carInformationTablePanel;
+        private DateTimePicker carInformationDate;
         private Label carMenuLable;
         private Label analyticsMenuLable;
         private Label billingMenuLable;
         private Label employeesMenuLable;
         private Label stockMenuLable;
         private Label logoutMenuLable;
+        private DataGridView carInformationDataGrid;
     }
 }

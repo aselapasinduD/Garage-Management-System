@@ -93,6 +93,7 @@
             addButton.TabIndex = 3;
             addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = false;
+            addButton.Click += addButton_Click;
             // 
             // employeePasswordInputLable
             // 
@@ -208,6 +209,7 @@
             // 
             carInformationTablePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             carInformationTablePanel.BackColor = Color.White;
+            carInformationTablePanel.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             carInformationTablePanel.Location = new Point(18, 170);
             carInformationTablePanel.Margin = new Padding(8);
             carInformationTablePanel.Name = "carInformationTablePanel";
