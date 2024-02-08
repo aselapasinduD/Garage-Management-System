@@ -22,7 +22,6 @@ namespace GarageTuto
 
             String dataQuery = "SELECT * FROM Cars";
             SqlDataAdapter SDA = new SqlDataAdapter(dataQuery, Database);
-            SqlCommandBuilder Builder = new SqlCommandBuilder(SDA);
 
             var dataSet = new DataSet();
             SDA.Fill(dataSet);
@@ -133,6 +132,7 @@ namespace GarageTuto
                 Database.Close();
                 displayDataSet();
                 clearInputs();
+                carInformationDataGrid.ClearSelection();
             }
             catch (Exception ex)
             {
