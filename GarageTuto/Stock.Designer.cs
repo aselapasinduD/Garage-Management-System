@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stock));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             logoutMenuLable = new Label();
             analyticsMenuLable = new Label();
             billingMenuLable = new Label();
@@ -38,9 +42,9 @@
             partTableTitleHead = new Label();
             menuPanel = new Panel();
             carPictureLogo = new PictureBox();
-            carInformationTablePanel = new Panel();
             panel1 = new Panel();
             carServicingTable = new Panel();
+            stockInformationDataGrid = new DataGridView();
             deleteButton = new Button();
             editButton = new Button();
             addButton = new Button();
@@ -49,12 +53,13 @@
             partNumberInputLable = new Label();
             priceInput = new MaskedTextBox();
             quantityInput = new MaskedTextBox();
-            partNumberInput = new MaskedTextBox();
+            partNameInput = new MaskedTextBox();
             partsInformationLableHead = new Label();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             panel1.SuspendLayout();
             carServicingTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)stockInformationDataGrid).BeginInit();
             SuspendLayout();
             // 
             // logoutMenuLable
@@ -169,16 +174,6 @@
             carPictureLogo.TabIndex = 1;
             carPictureLogo.TabStop = false;
             // 
-            // carInformationTablePanel
-            // 
-            carInformationTablePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            carInformationTablePanel.BackColor = Color.White;
-            carInformationTablePanel.Location = new Point(18, 164);
-            carInformationTablePanel.Margin = new Padding(8);
-            carInformationTablePanel.Name = "carInformationTablePanel";
-            carInformationTablePanel.Size = new Size(1118, 497);
-            carInformationTablePanel.TabIndex = 5;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
@@ -195,7 +190,7 @@
             // 
             carServicingTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             carServicingTable.BackColor = Color.DarkGray;
-            carServicingTable.Controls.Add(carInformationTablePanel);
+            carServicingTable.Controls.Add(stockInformationDataGrid);
             carServicingTable.Controls.Add(deleteButton);
             carServicingTable.Controls.Add(editButton);
             carServicingTable.Controls.Add(addButton);
@@ -204,13 +199,71 @@
             carServicingTable.Controls.Add(partNumberInputLable);
             carServicingTable.Controls.Add(priceInput);
             carServicingTable.Controls.Add(quantityInput);
-            carServicingTable.Controls.Add(partNumberInput);
+            carServicingTable.Controls.Add(partNameInput);
             carServicingTable.Controls.Add(partsInformationLableHead);
             carServicingTable.Location = new Point(185, 40);
             carServicingTable.Margin = new Padding(8);
             carServicingTable.Name = "carServicingTable";
             carServicingTable.Size = new Size(1154, 677);
             carServicingTable.TabIndex = 3;
+            // 
+            // stockInformationDataGrid
+            // 
+            stockInformationDataGrid.AllowUserToAddRows = false;
+            stockInformationDataGrid.AllowUserToDeleteRows = false;
+            stockInformationDataGrid.AllowUserToResizeColumns = false;
+            stockInformationDataGrid.AllowUserToResizeRows = false;
+            stockInformationDataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            stockInformationDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            stockInformationDataGrid.BackgroundColor = Color.White;
+            stockInformationDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            stockInformationDataGrid.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            stockInformationDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Black;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            stockInformationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            stockInformationDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Black;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            stockInformationDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            stockInformationDataGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
+            stockInformationDataGrid.GridColor = Color.Black;
+            stockInformationDataGrid.ImeMode = ImeMode.Off;
+            stockInformationDataGrid.Location = new Point(18, 168);
+            stockInformationDataGrid.MultiSelect = false;
+            stockInformationDataGrid.Name = "stockInformationDataGrid";
+            stockInformationDataGrid.ReadOnly = true;
+            stockInformationDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            stockInformationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            stockInformationDataGrid.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.NullValue = "No data in this Cell";
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            stockInformationDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            stockInformationDataGrid.RowTemplate.Height = 30;
+            stockInformationDataGrid.ScrollBars = ScrollBars.Horizontal;
+            stockInformationDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            stockInformationDataGrid.ShowCellErrors = false;
+            stockInformationDataGrid.ShowCellToolTips = false;
+            stockInformationDataGrid.ShowEditingIcon = false;
+            stockInformationDataGrid.ShowRowErrors = false;
+            stockInformationDataGrid.Size = new Size(1118, 493);
+            stockInformationDataGrid.TabIndex = 8;
+            stockInformationDataGrid.CellClick += stockInformationDataGrid_CellClick;
             // 
             // deleteButton
             // 
@@ -277,36 +330,41 @@
             partNumberInputLable.Font = new Font("Segoe UI", 12F);
             partNumberInputLable.Location = new Point(18, 48);
             partNumberInputLable.Name = "partNumberInputLable";
-            partNumberInputLable.Size = new Size(99, 21);
+            partNumberInputLable.Size = new Size(83, 21);
             partNumberInputLable.TabIndex = 2;
-            partNumberInputLable.Text = "Part Number";
+            partNumberInputLable.Text = "Part Name";
             // 
             // priceInput
             // 
+            priceInput.AllowPromptAsInput = false;
             priceInput.Font = new Font("Segoe UI", 10F);
+            priceInput.HidePromptOnLeave = true;
             priceInput.Location = new Point(472, 72);
+            priceInput.Mask = "0000000000";
             priceInput.Name = "priceInput";
             priceInput.Size = new Size(200, 25);
             priceInput.TabIndex = 1;
-            priceInput.MaskInputRejected += priceInput_MaskInputRejected;
+            priceInput.ValidatingType = typeof(int);
             // 
             // quantityInput
             // 
+            quantityInput.AllowPromptAsInput = false;
             quantityInput.Font = new Font("Segoe UI", 10F);
+            quantityInput.HidePromptOnLeave = true;
             quantityInput.Location = new Point(245, 72);
+            quantityInput.Mask = "0000000000";
             quantityInput.Name = "quantityInput";
             quantityInput.Size = new Size(200, 25);
             quantityInput.TabIndex = 1;
-            quantityInput.MaskInputRejected += quantityInput_MaskInputRejected;
+            quantityInput.ValidatingType = typeof(int);
             // 
-            // partNumberInput
+            // partNameInput
             // 
-            partNumberInput.Font = new Font("Segoe UI", 10F);
-            partNumberInput.Location = new Point(18, 72);
-            partNumberInput.Name = "partNumberInput";
-            partNumberInput.Size = new Size(200, 25);
-            partNumberInput.TabIndex = 1;
-            partNumberInput.MaskInputRejected += partNumberInput_MaskInputRejected;
+            partNameInput.Font = new Font("Segoe UI", 10F);
+            partNameInput.Location = new Point(18, 72);
+            partNameInput.Name = "partNameInput";
+            partNameInput.Size = new Size(200, 25);
+            partNameInput.TabIndex = 1;
             // 
             // partsInformationLableHead
             // 
@@ -336,6 +394,7 @@
             panel1.PerformLayout();
             carServicingTable.ResumeLayout(false);
             carServicingTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)stockInformationDataGrid).EndInit();
             ResumeLayout(false);
         }
 
@@ -349,7 +408,6 @@
         private Label partTableTitleHead;
         private Panel menuPanel;
         private PictureBox carPictureLogo;
-        private Panel carInformationTablePanel;
         private Panel panel1;
         private Panel carServicingTable;
         private Button deleteButton;
@@ -360,7 +418,8 @@
         private Label partNumberInputLable;
         private MaskedTextBox priceInput;
         private MaskedTextBox quantityInput;
-        private MaskedTextBox partNumberInput;
+        private MaskedTextBox partNameInput;
         private Label partsInformationLableHead;
+        private DataGridView stockInformationDataGrid;
     }
 }

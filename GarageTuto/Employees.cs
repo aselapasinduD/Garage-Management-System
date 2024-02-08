@@ -59,6 +59,7 @@ namespace GarageTuto
                 cmd.ExecuteNonQuery();
                 Database.Close();
                 displayDataSet();
+                clearInputs();
 
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Success", "Data Is Added Successfully");
@@ -68,7 +69,6 @@ namespace GarageTuto
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Warning", ex.Message);
             }
-            Debug.WriteLine("Add Button is Clicked");
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

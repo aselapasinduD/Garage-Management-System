@@ -52,6 +52,8 @@ namespace GarageTuto
                 cmd.ExecuteNonQuery();
                 Database.Close();
                 displayDataSet();
+                clearInputs();
+
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Success", "Data Is Added Successfully");
             }
