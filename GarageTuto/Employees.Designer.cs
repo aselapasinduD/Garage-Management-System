@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employees));
             deleteButton = new Button();
             editButton = new Button();
@@ -41,8 +45,8 @@
             employeeNameInput = new MaskedTextBox();
             panel1 = new Panel();
             carServicingTable = new Panel();
-            genderBox = new ComboBox();
-            carInformationTablePanel = new Panel();
+            employeeInformationDataGrid = new DataGridView();
+            genderInput = new ComboBox();
             manageEmployeesTitleHead = new Label();
             menuPanel = new Panel();
             logoutMenuLable = new Label();
@@ -54,6 +58,7 @@
             carPictureLogo = new PictureBox();
             panel1.SuspendLayout();
             carServicingTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)employeeInformationDataGrid).BeginInit();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             SuspendLayout();
@@ -69,6 +74,7 @@
             deleteButton.TabIndex = 3;
             deleteButton.Text = "Delete";
             deleteButton.UseVisualStyleBackColor = false;
+            deleteButton.Click += deleteButton_Click;
             // 
             // editButton
             // 
@@ -81,6 +87,7 @@
             editButton.TabIndex = 3;
             editButton.Text = "Edit";
             editButton.UseVisualStyleBackColor = false;
+            editButton.Click += editButton_Click;
             // 
             // addButton
             // 
@@ -176,8 +183,8 @@
             // 
             carServicingTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             carServicingTable.BackColor = Color.DarkGray;
-            carServicingTable.Controls.Add(genderBox);
-            carServicingTable.Controls.Add(carInformationTablePanel);
+            carServicingTable.Controls.Add(employeeInformationDataGrid);
+            carServicingTable.Controls.Add(genderInput);
             carServicingTable.Controls.Add(deleteButton);
             carServicingTable.Controls.Add(editButton);
             carServicingTable.Controls.Add(addButton);
@@ -194,27 +201,73 @@
             carServicingTable.Size = new Size(1154, 677);
             carServicingTable.TabIndex = 3;
             // 
-            // genderBox
+            // employeeInformationDataGrid
             // 
-            genderBox.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            genderBox.FormattingEnabled = true;
-            genderBox.Items.AddRange(new object[] { "Male", "Female" });
-            genderBox.Location = new Point(699, 72);
-            genderBox.Name = "genderBox";
-            genderBox.Size = new Size(200, 25);
-            genderBox.TabIndex = 6;
-            genderBox.Text = "Gender";
+            employeeInformationDataGrid.AllowUserToAddRows = false;
+            employeeInformationDataGrid.AllowUserToDeleteRows = false;
+            employeeInformationDataGrid.AllowUserToResizeColumns = false;
+            employeeInformationDataGrid.AllowUserToResizeRows = false;
+            employeeInformationDataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            employeeInformationDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            employeeInformationDataGrid.BackgroundColor = Color.White;
+            employeeInformationDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            employeeInformationDataGrid.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            employeeInformationDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.Black;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            employeeInformationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            employeeInformationDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.Black;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            employeeInformationDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            employeeInformationDataGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
+            employeeInformationDataGrid.GridColor = Color.Black;
+            employeeInformationDataGrid.ImeMode = ImeMode.Off;
+            employeeInformationDataGrid.Location = new Point(18, 168);
+            employeeInformationDataGrid.MultiSelect = false;
+            employeeInformationDataGrid.Name = "employeeInformationDataGrid";
+            employeeInformationDataGrid.ReadOnly = true;
+            employeeInformationDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            employeeInformationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            employeeInformationDataGrid.RowHeadersVisible = false;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.NullValue = "No data in this Cell";
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            employeeInformationDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            employeeInformationDataGrid.RowTemplate.Height = 30;
+            employeeInformationDataGrid.ScrollBars = ScrollBars.Horizontal;
+            employeeInformationDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            employeeInformationDataGrid.ShowCellErrors = false;
+            employeeInformationDataGrid.ShowCellToolTips = false;
+            employeeInformationDataGrid.ShowEditingIcon = false;
+            employeeInformationDataGrid.ShowRowErrors = false;
+            employeeInformationDataGrid.Size = new Size(1118, 493);
+            employeeInformationDataGrid.TabIndex = 7;
             // 
-            // carInformationTablePanel
+            // genderInput
             // 
-            carInformationTablePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            carInformationTablePanel.BackColor = Color.White;
-            carInformationTablePanel.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            carInformationTablePanel.Location = new Point(18, 170);
-            carInformationTablePanel.Margin = new Padding(8);
-            carInformationTablePanel.Name = "carInformationTablePanel";
-            carInformationTablePanel.Size = new Size(1118, 491);
-            carInformationTablePanel.TabIndex = 5;
+            genderInput.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            genderInput.FormattingEnabled = true;
+            genderInput.Items.AddRange(new object[] { "Male", "Female" });
+            genderInput.Location = new Point(699, 72);
+            genderInput.Name = "genderInput";
+            genderInput.Size = new Size(200, 25);
+            genderInput.TabIndex = 6;
+            genderInput.Text = "Gender";
             // 
             // manageEmployeesTitleHead
             // 
@@ -336,6 +389,7 @@
             panel1.PerformLayout();
             carServicingTable.ResumeLayout(false);
             carServicingTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)employeeInformationDataGrid).EndInit();
             menuPanel.ResumeLayout(false);
             menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).EndInit();
@@ -356,7 +410,6 @@
         private MaskedTextBox employeeNameInput;
         private Panel panel1;
         private Panel carServicingTable;
-        private Panel carInformationTablePanel;
         private Label manageEmployeesTitleHead;
         private Panel menuPanel;
         private Label logoutMenuLable;
@@ -366,6 +419,7 @@
         private Label stockMenuLable;
         private Label carMenuLable;
         private PictureBox carPictureLogo;
-        private ComboBox genderBox;
+        private ComboBox genderInput;
+        private DataGridView employeeInformationDataGrid;
     }
 }

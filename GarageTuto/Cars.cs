@@ -1,6 +1,5 @@
 using System.Diagnostics;
 using System.Data.SqlClient;
-using System.Text;
 using System.Data;
 
 namespace GarageTuto
