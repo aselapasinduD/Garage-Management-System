@@ -126,6 +126,7 @@ namespace GarageTuto
                 cmd.ExecuteNonQuery();
                 Database.Close();
                 displayDataSet();
+
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Success", "Data Is Edited Successfully");
                 clearInputs();
@@ -158,6 +159,7 @@ namespace GarageTuto
                 msgBox.Show("Warning", ex.Message);
             }
         }
+
         private void clearInputs()
         {
             partNameInput.Text = "";
