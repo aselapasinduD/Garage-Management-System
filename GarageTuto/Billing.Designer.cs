@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Billing));
-            DataGridViewCellStyle dataGridViewCellStyle41 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle42 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle43 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle44 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle45 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle46 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle47 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle48 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             menuPanel = new Panel();
             logoutMenuLable = new Label();
             analyticsMenuLable = new Label();
@@ -45,7 +45,7 @@
             stockMenuLable = new Label();
             carMenuLable = new Label();
             carPictureLogo = new PictureBox();
-            calculateFeeButton = new Button();
+            removePartButton = new Button();
             printButton = new Button();
             addPartButton = new Button();
             dateInputLable = new Label();
@@ -62,11 +62,12 @@
             totalPriceNumber = new Label();
             totalPriceLabel = new Label();
             billingDataGrid = new DataGridView();
-            Number = new DataGridViewTextBoxColumn();
-            Part = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            Total = new DataGridViewTextBoxColumn();
+            numberTableHead = new DataGridViewTextBoxColumn();
+            billingPartId = new DataGridViewTextBoxColumn();
+            partsTableHead = new DataGridViewTextBoxColumn();
+            quantityTableHead = new DataGridViewTextBoxColumn();
+            priceTableHead = new DataGridViewTextBoxColumn();
+            totalTableHead = new DataGridViewTextBoxColumn();
             stockLabel = new Label();
             carNumberBox = new ComboBox();
             stockDataGrid = new DataGridView();
@@ -74,6 +75,7 @@
             mechanicsFeeInput = new MaskedTextBox();
             quantityInput = new MaskedTextBox();
             billingTitleHead = new Label();
+            employeeName = new Label();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             panel1.SuspendLayout();
@@ -176,47 +178,54 @@
             carPictureLogo.TabIndex = 1;
             carPictureLogo.TabStop = false;
             // 
-            // calculateFeeButton
+            // removePartButton
             // 
-            calculateFeeButton.BackColor = Color.Salmon;
-            calculateFeeButton.Cursor = Cursors.Hand;
-            calculateFeeButton.Font = new Font("Segoe UI", 12F);
-            calculateFeeButton.Location = new Point(505, 520);
-            calculateFeeButton.Name = "calculateFeeButton";
-            calculateFeeButton.Size = new Size(145, 33);
-            calculateFeeButton.TabIndex = 3;
-            calculateFeeButton.Text = "Calculate Fee";
-            calculateFeeButton.UseVisualStyleBackColor = false;
+            removePartButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            removePartButton.BackColor = Color.Salmon;
+            removePartButton.Cursor = Cursors.Hand;
+            removePartButton.Font = new Font("Segoe UI", 12F);
+            removePartButton.Location = new Point(505, 526);
+            removePartButton.Name = "removePartButton";
+            removePartButton.Size = new Size(145, 33);
+            removePartButton.TabIndex = 3;
+            removePartButton.Text = "Remove Part";
+            removePartButton.UseVisualStyleBackColor = false;
+            removePartButton.Click += removePartButton_Click;
             // 
             // printButton
             // 
+            printButton.Anchor = AnchorStyles.Bottom;
             printButton.BackColor = Color.PaleGreen;
             printButton.Cursor = Cursors.Hand;
             printButton.Font = new Font("Segoe UI", 12F);
-            printButton.Location = new Point(848, 629);
+            printButton.Location = new Point(848, 631);
             printButton.Name = "printButton";
             printButton.Size = new Size(145, 33);
             printButton.TabIndex = 3;
-            printButton.Text = "Print";
+            printButton.Text = "Print Bill";
             printButton.UseVisualStyleBackColor = false;
+            printButton.Click += printButton_Click;
             // 
             // addPartButton
             // 
+            addPartButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             addPartButton.BackColor = Color.SkyBlue;
             addPartButton.Cursor = Cursors.Hand;
             addPartButton.Font = new Font("Segoe UI", 12F);
-            addPartButton.Location = new Point(505, 402);
+            addPartButton.Location = new Point(505, 478);
             addPartButton.Name = "addPartButton";
             addPartButton.Size = new Size(145, 33);
             addPartButton.TabIndex = 3;
             addPartButton.Text = "Add Part";
             addPartButton.UseVisualStyleBackColor = false;
+            addPartButton.Click += addPartButton_Click;
             // 
             // dateInputLable
             // 
+            dateInputLable.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             dateInputLable.AutoSize = true;
             dateInputLable.Font = new Font("Segoe UI", 12F);
-            dateInputLable.Location = new Point(463, 231);
+            dateInputLable.Location = new Point(463, 239);
             dateInputLable.Name = "dateInputLable";
             dateInputLable.Size = new Size(42, 21);
             dateInputLable.TabIndex = 2;
@@ -224,6 +233,7 @@
             // 
             // carNumberBoxLable
             // 
+            carNumberBoxLable.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             carNumberBoxLable.AutoSize = true;
             carNumberBoxLable.Font = new Font("Segoe UI", 12F);
             carNumberBoxLable.Location = new Point(463, 68);
@@ -234,19 +244,21 @@
             // 
             // mechanicsFeeInputLable
             // 
+            mechanicsFeeInputLable.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             mechanicsFeeInputLable.AutoSize = true;
             mechanicsFeeInputLable.Font = new Font("Segoe UI", 12F);
-            mechanicsFeeInputLable.Location = new Point(463, 456);
+            mechanicsFeeInputLable.Location = new Point(463, 308);
             mechanicsFeeInputLable.Name = "mechanicsFeeInputLable";
-            mechanicsFeeInputLable.Size = new Size(111, 21);
+            mechanicsFeeInputLable.Size = new Size(152, 21);
             mechanicsFeeInputLable.TabIndex = 2;
-            mechanicsFeeInputLable.Text = "Mechanics Fee";
+            mechanicsFeeInputLable.Text = "Mechanics Fee (LKR)";
             // 
             // quantityInputLable
             // 
+            quantityInputLable.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             quantityInputLable.AutoSize = true;
             quantityInputLable.Font = new Font("Segoe UI", 12F);
-            quantityInputLable.Location = new Point(463, 338);
+            quantityInputLable.Location = new Point(463, 414);
             quantityInputLable.Name = "quantityInputLable";
             quantityInputLable.Size = new Size(70, 21);
             quantityInputLable.TabIndex = 2;
@@ -266,6 +278,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.Controls.Add(employeeName);
             panel1.Controls.Add(carServicingTable);
             panel1.Controls.Add(billingTitleHead);
             panel1.Controls.Add(menuPanel);
@@ -290,7 +303,7 @@
             carServicingTable.Controls.Add(carNumberBox);
             carServicingTable.Controls.Add(stockDataGrid);
             carServicingTable.Controls.Add(billingDatePicker);
-            carServicingTable.Controls.Add(calculateFeeButton);
+            carServicingTable.Controls.Add(removePartButton);
             carServicingTable.Controls.Add(printButton);
             carServicingTable.Controls.Add(addPartButton);
             carServicingTable.Controls.Add(dateInputLable);
@@ -308,32 +321,35 @@
             // 
             // carDateShowingLabel
             // 
+            carDateShowingLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             carDateShowingLabel.AutoSize = true;
             carDateShowingLabel.BackColor = Color.Transparent;
-            carDateShowingLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            carDateShowingLabel.Location = new Point(546, 161);
+            carDateShowingLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            carDateShowingLabel.Location = new Point(538, 161);
             carDateShowingLabel.Name = "carDateShowingLabel";
-            carDateShowingLabel.Size = new Size(49, 17);
+            carDateShowingLabel.Size = new Size(13, 17);
             carDateShowingLabel.TabIndex = 15;
-            carDateShowingLabel.Text = "Testing";
+            carDateShowingLabel.Text = "-";
             // 
             // carOwnerNameShowLabel
             // 
+            carOwnerNameShowLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             carOwnerNameShowLabel.AutoSize = true;
             carOwnerNameShowLabel.BackColor = Color.Transparent;
-            carOwnerNameShowLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            carOwnerNameShowLabel.Location = new Point(546, 134);
+            carOwnerNameShowLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            carOwnerNameShowLabel.Location = new Point(538, 134);
             carOwnerNameShowLabel.Name = "carOwnerNameShowLabel";
-            carOwnerNameShowLabel.Size = new Size(49, 17);
+            carOwnerNameShowLabel.Size = new Size(13, 17);
             carOwnerNameShowLabel.TabIndex = 14;
-            carOwnerNameShowLabel.Text = "Testing";
+            carOwnerNameShowLabel.Text = "-";
             // 
             // dateLabel
             // 
+            dateLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             dateLabel.AutoSize = true;
             dateLabel.BackColor = Color.Transparent;
             dateLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateLabel.Location = new Point(463, 161);
+            dateLabel.Location = new Point(498, 161);
             dateLabel.Name = "dateLabel";
             dateLabel.Size = new Size(42, 17);
             dateLabel.TabIndex = 13;
@@ -341,6 +357,7 @@
             // 
             // carOwnerLabel
             // 
+            carOwnerLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             carOwnerLabel.AutoSize = true;
             carOwnerLabel.BackColor = Color.Transparent;
             carOwnerLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -352,19 +369,21 @@
             // 
             // totalPriceNumber
             // 
+            totalPriceNumber.Anchor = AnchorStyles.Bottom;
             totalPriceNumber.AutoSize = true;
             totalPriceNumber.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            totalPriceNumber.Location = new Point(1029, 592);
+            totalPriceNumber.Location = new Point(1029, 593);
             totalPriceNumber.Name = "totalPriceNumber";
-            totalPriceNumber.Size = new Size(54, 25);
+            totalPriceNumber.Size = new Size(23, 25);
             totalPriceNumber.TabIndex = 10;
-            totalPriceNumber.Text = "Price";
+            totalPriceNumber.Text = "0";
             // 
             // totalPriceLabel
             // 
+            totalPriceLabel.Anchor = AnchorStyles.Bottom;
             totalPriceLabel.AutoSize = true;
             totalPriceLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            totalPriceLabel.Location = new Point(729, 592);
+            totalPriceLabel.Location = new Point(729, 593);
             totalPriceLabel.Name = "totalPriceLabel";
             totalPriceLabel.Size = new Size(105, 25);
             totalPriceLabel.TabIndex = 8;
@@ -376,48 +395,48 @@
             billingDataGrid.AllowUserToDeleteRows = false;
             billingDataGrid.AllowUserToResizeColumns = false;
             billingDataGrid.AllowUserToResizeRows = false;
-            billingDataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            billingDataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             billingDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             billingDataGrid.BackgroundColor = Color.White;
             billingDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             billingDataGrid.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             billingDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle41.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle41.BackColor = Color.Black;
-            dataGridViewCellStyle41.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle41.ForeColor = Color.White;
-            dataGridViewCellStyle41.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = DataGridViewTriState.True;
-            billingDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Black;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            billingDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             billingDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            billingDataGrid.Columns.AddRange(new DataGridViewColumn[] { Number, Part, Price, Quantity, Total });
-            dataGridViewCellStyle42.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle42.BackColor = Color.Black;
-            dataGridViewCellStyle42.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle42.ForeColor = Color.White;
-            dataGridViewCellStyle42.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = DataGridViewTriState.True;
-            billingDataGrid.DefaultCellStyle = dataGridViewCellStyle42;
+            billingDataGrid.Columns.AddRange(new DataGridViewColumn[] { numberTableHead, billingPartId, partsTableHead, quantityTableHead, priceTableHead, totalTableHead });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Black;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            billingDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             billingDataGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
             billingDataGrid.GridColor = Color.Black;
             billingDataGrid.ImeMode = ImeMode.Off;
-            billingDataGrid.Location = new Point(704, 70);
+            billingDataGrid.Location = new Point(697, 70);
             billingDataGrid.MultiSelect = false;
             billingDataGrid.Name = "billingDataGrid";
             billingDataGrid.ReadOnly = true;
             billingDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            billingDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle43;
+            billingDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             billingDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle44.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle44.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle44.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle44.ForeColor = Color.Black;
-            dataGridViewCellStyle44.NullValue = "No data in this Cell";
-            dataGridViewCellStyle44.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle44.SelectionForeColor = SystemColors.HighlightText;
-            billingDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.NullValue = "No data in this Cell";
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            billingDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             billingDataGrid.RowTemplate.Height = 30;
             billingDataGrid.ScrollBars = ScrollBars.Horizontal;
             billingDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -425,38 +444,45 @@
             billingDataGrid.ShowCellToolTips = false;
             billingDataGrid.ShowEditingIcon = false;
             billingDataGrid.ShowRowErrors = false;
-            billingDataGrid.Size = new Size(432, 506);
+            billingDataGrid.Size = new Size(439, 506);
             billingDataGrid.TabIndex = 7;
+            billingDataGrid.CellClick += billingDataGrid_CellClick;
             // 
-            // Number
+            // numberTableHead
             // 
-            Number.HeaderText = "Number";
-            Number.Name = "Number";
-            Number.ReadOnly = true;
+            numberTableHead.HeaderText = "Number";
+            numberTableHead.Name = "numberTableHead";
+            numberTableHead.ReadOnly = true;
             // 
-            // Part
+            // billingPartId
             // 
-            Part.HeaderText = "Part";
-            Part.Name = "Part";
-            Part.ReadOnly = true;
+            billingPartId.HeaderText = "PartId";
+            billingPartId.Name = "billingPartId";
+            billingPartId.ReadOnly = true;
             // 
-            // Price
+            // partsTableHead
             // 
-            Price.HeaderText = "Price";
-            Price.Name = "Price";
-            Price.ReadOnly = true;
+            partsTableHead.HeaderText = "Parts";
+            partsTableHead.Name = "partsTableHead";
+            partsTableHead.ReadOnly = true;
             // 
-            // Quantity
+            // quantityTableHead
             // 
-            Quantity.HeaderText = "Quantity";
-            Quantity.Name = "Quantity";
-            Quantity.ReadOnly = true;
+            quantityTableHead.HeaderText = "Quantity";
+            quantityTableHead.Name = "quantityTableHead";
+            quantityTableHead.ReadOnly = true;
             // 
-            // Total
+            // priceTableHead
             // 
-            Total.HeaderText = "Total";
-            Total.Name = "Total";
-            Total.ReadOnly = true;
+            priceTableHead.HeaderText = "Price";
+            priceTableHead.Name = "priceTableHead";
+            priceTableHead.ReadOnly = true;
+            // 
+            // totalTableHead
+            // 
+            totalTableHead.HeaderText = "Total";
+            totalTableHead.Name = "totalTableHead";
+            totalTableHead.ReadOnly = true;
             // 
             // stockLabel
             // 
@@ -471,12 +497,16 @@
             // 
             // carNumberBox
             // 
+            carNumberBox.AllowDrop = true;
+            carNumberBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             carNumberBox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             carNumberBox.FormattingEnabled = true;
             carNumberBox.Location = new Point(463, 92);
+            carNumberBox.MaxDropDownItems = 10;
             carNumberBox.Name = "carNumberBox";
             carNumberBox.Size = new Size(228, 29);
             carNumberBox.TabIndex = 2;
+            carNumberBox.SelectedIndexChanged += carNumberBox_SelectedIndexChanged;
             // 
             // stockDataGrid
             // 
@@ -490,23 +520,23 @@
             stockDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             stockDataGrid.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             stockDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle45.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle45.BackColor = Color.Black;
-            dataGridViewCellStyle45.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle45.ForeColor = Color.White;
-            dataGridViewCellStyle45.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle45.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle45.WrapMode = DataGridViewTriState.True;
-            stockDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.Black;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            stockDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             stockDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle46.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle46.BackColor = Color.Black;
-            dataGridViewCellStyle46.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle46.ForeColor = Color.White;
-            dataGridViewCellStyle46.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle46.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle46.WrapMode = DataGridViewTriState.True;
-            stockDataGrid.DefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.Black;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            stockDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
             stockDataGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
             stockDataGrid.GridColor = Color.Black;
             stockDataGrid.ImeMode = ImeMode.Off;
@@ -515,16 +545,16 @@
             stockDataGrid.Name = "stockDataGrid";
             stockDataGrid.ReadOnly = true;
             stockDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            stockDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            stockDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             stockDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle48.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle48.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle48.ForeColor = Color.Black;
-            dataGridViewCellStyle48.NullValue = "No data in this Cell";
-            dataGridViewCellStyle48.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle48.SelectionForeColor = SystemColors.HighlightText;
-            stockDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.NullValue = "No data in this Cell";
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            stockDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
             stockDataGrid.RowTemplate.Height = 30;
             stockDataGrid.ScrollBars = ScrollBars.Horizontal;
             stockDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -532,13 +562,15 @@
             stockDataGrid.ShowCellToolTips = false;
             stockDataGrid.ShowEditingIcon = false;
             stockDataGrid.ShowRowErrors = false;
-            stockDataGrid.Size = new Size(432, 506);
+            stockDataGrid.Size = new Size(439, 506);
             stockDataGrid.TabIndex = 5;
+            stockDataGrid.CellClick += stockDataGrid_CellClick;
             // 
             // billingDatePicker
             // 
+            billingDatePicker.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             billingDatePicker.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            billingDatePicker.Location = new Point(463, 255);
+            billingDatePicker.Location = new Point(463, 263);
             billingDatePicker.Name = "billingDatePicker";
             billingDatePicker.Size = new Size(228, 25);
             billingDatePicker.TabIndex = 4;
@@ -546,25 +578,30 @@
             // mechanicsFeeInput
             // 
             mechanicsFeeInput.AllowPromptAsInput = false;
+            mechanicsFeeInput.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             mechanicsFeeInput.Font = new Font("Segoe UI", 10F);
             mechanicsFeeInput.HidePromptOnLeave = true;
-            mechanicsFeeInput.Location = new Point(463, 480);
+            mechanicsFeeInput.Location = new Point(463, 332);
             mechanicsFeeInput.Mask = "0000000000";
             mechanicsFeeInput.Name = "mechanicsFeeInput";
             mechanicsFeeInput.Size = new Size(228, 25);
             mechanicsFeeInput.TabIndex = 1;
+            mechanicsFeeInput.Text = "0";
             mechanicsFeeInput.ValidatingType = typeof(int);
+            mechanicsFeeInput.TextChanged += mechanicsFeeInput_TextChanged;
             // 
             // quantityInput
             // 
             quantityInput.AllowPromptAsInput = false;
+            quantityInput.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             quantityInput.Font = new Font("Segoe UI", 10F);
             quantityInput.HidePromptOnLeave = true;
-            quantityInput.Location = new Point(463, 362);
+            quantityInput.Location = new Point(463, 438);
             quantityInput.Mask = "00000";
             quantityInput.Name = "quantityInput";
             quantityInput.Size = new Size(228, 25);
             quantityInput.TabIndex = 1;
+            quantityInput.Text = "1";
             quantityInput.ValidatingType = typeof(int);
             // 
             // billingTitleHead
@@ -578,6 +615,18 @@
             billingTitleHead.Size = new Size(82, 31);
             billingTitleHead.TabIndex = 2;
             billingTitleHead.Text = "Billing";
+            // 
+            // employeeName
+            // 
+            employeeName.AutoSize = true;
+            employeeName.BackColor = Color.Transparent;
+            employeeName.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            employeeName.ForeColor = Color.White;
+            employeeName.Location = new Point(1234, 13);
+            employeeName.Name = "employeeName";
+            employeeName.Size = new Size(104, 17);
+            employeeName.TabIndex = 4;
+            employeeName.Text = "Employee Name";
             // 
             // Billing
             // 
@@ -611,7 +660,7 @@
         private Label stockMenuLable;
         private Label carMenuLable;
         private PictureBox carPictureLogo;
-        private Button calculateFeeButton;
+        private Button removePartButton;
         private Button printButton;
         private Button addPartButton;
         private Label dateInputLable;
@@ -631,14 +680,16 @@
         private MaskedTextBox quantityInput;
         private Label totalPriceNumber;
         private Label totalPriceLabel;
-        private DataGridViewTextBoxColumn Number;
-        private DataGridViewTextBoxColumn Part;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Quantity;
-        private DataGridViewTextBoxColumn Total;
         private Label carOwnerLabel;
         private Label carDateShowingLabel;
         private Label carOwnerNameShowLabel;
         private Label dateLabel;
+        private DataGridViewTextBoxColumn numberTableHead;
+        private DataGridViewTextBoxColumn billingPartId;
+        private DataGridViewTextBoxColumn partsTableHead;
+        private DataGridViewTextBoxColumn quantityTableHead;
+        private DataGridViewTextBoxColumn priceTableHead;
+        private DataGridViewTextBoxColumn totalTableHead;
+        private Label employeeName;
     }
 }

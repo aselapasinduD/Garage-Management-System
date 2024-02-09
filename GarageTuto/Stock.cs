@@ -119,7 +119,8 @@ namespace GarageTuto
             try
             {
                 Database.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Stock SET PartName=@Pn,PartQuantity=@Pq,PartPrice=@Pp", Database);
+                SqlCommand cmd = new SqlCommand("UPDATE Stock SET PartName=@Pn,PartQuantity=@Pq,PartPrice=@Pp WHERE PartId=@Pid", Database);
+                cmd.Parameters.AddWithValue("@Pid", partId);
                 cmd.Parameters.AddWithValue("@Pn", partNameInput.Text);
                 cmd.Parameters.AddWithValue("@Pq", quantityInput.Text);
                 cmd.Parameters.AddWithValue("@Pp", priceInput.Text);
