@@ -68,6 +68,8 @@
             mechanicsFeeInput = new MaskedTextBox();
             quantityInput = new MaskedTextBox();
             billingTitleHead = new Label();
+            numberOfParts = new Label();
+            numberOfPartsLabel = new Label();
             panel1.SuspendLayout();
             carServicingTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)billingDataGrid).BeginInit();
@@ -199,6 +201,8 @@
             // 
             carServicingTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             carServicingTable.BackColor = Color.DarkGray;
+            carServicingTable.Controls.Add(numberOfParts);
+            carServicingTable.Controls.Add(numberOfPartsLabel);
             carServicingTable.Controls.Add(carDateShowingLabel);
             carServicingTable.Controls.Add(carOwnerNameShowLabel);
             carServicingTable.Controls.Add(dateLabel);
@@ -523,6 +527,28 @@
             billingTitleHead.TabIndex = 2;
             billingTitleHead.Text = "Billing";
             // 
+            // numberOfParts
+            // 
+            numberOfParts.AutoSize = true;
+            numberOfParts.BackColor = Color.Transparent;
+            numberOfParts.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numberOfParts.Location = new Point(150, 579);
+            numberOfParts.Name = "numberOfParts";
+            numberOfParts.Size = new Size(17, 20);
+            numberOfParts.TabIndex = 17;
+            numberOfParts.Text = "0";
+            // 
+            // numberOfPartsLabel
+            // 
+            numberOfPartsLabel.AutoSize = true;
+            numberOfPartsLabel.BackColor = Color.Transparent;
+            numberOfPartsLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numberOfPartsLabel.Location = new Point(18, 579);
+            numberOfPartsLabel.Name = "numberOfPartsLabel";
+            numberOfPartsLabel.Size = new Size(126, 20);
+            numberOfPartsLabel.TabIndex = 16;
+            numberOfPartsLabel.Text = "Number of Parts:";
+            // 
             // Billing
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -574,5 +600,7 @@
         private DataGridViewTextBoxColumn priceTableHead;
         private DataGridViewTextBoxColumn totalTableHead;
         private Label employeeName;
+        private Label numberOfParts;
+        private Label numberOfPartsLabel;
     }
 }

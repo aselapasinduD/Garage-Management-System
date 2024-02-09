@@ -18,7 +18,18 @@ namespace GarageTuto
         //Car information Functions
         private void displayDataSet()
         {
-            Database.Open();
+            try
+            {
+                Database.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(
+                    "Continue Old Database Connection!",
+                    "Error",
+                    MessageBoxButtons.OK
+                    );
+            }
 
             String dataQuery = "SELECT * FROM Cars";
             SqlDataAdapter SDA = new SqlDataAdapter(dataQuery, Database);
@@ -28,6 +39,7 @@ namespace GarageTuto
             carInformationDataGrid.DataSource = dataSet.Tables[0];
 
             Database.Close();
+            updateNumberOf();
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -61,6 +73,7 @@ namespace GarageTuto
             {
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Warning", ex.Message);
+                Database.Close();
             }
         }
 
@@ -73,7 +86,7 @@ namespace GarageTuto
                 msgBox.Show("Warning", "Empty Data Input Error");
                 return;
             }
-            if(selectedRowCarNumber != carNumberInput.Text)
+            if (selectedRowCarNumber != carNumberInput.Text)
             {
                 DialogResult dialogResult = MessageBox.Show(
                 "You Can't Edit Car Number.",
@@ -104,12 +117,13 @@ namespace GarageTuto
             {
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Warning", ex.Message);
+                Database.Close();
             }
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            if(selectedRowCarNumber == "")
+            if (selectedRowCarNumber == "")
             {
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Warning", "There is no any Selected Row to Delete. Deleting Is Failed");
@@ -140,6 +154,7 @@ namespace GarageTuto
             {
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Warning", ex.Message);
+                Database.Close();
             }
         }
 
@@ -178,6 +193,11 @@ namespace GarageTuto
             carColorInput.Text = "";
             ownerNameInput.Text = "";
             selectedRowCarNumber = "";
+        }
+
+        private void updateNumberOf()
+        {
+            numberOfCars.Text = carInformationDataGrid.RowCount.ToString();
         }
     }
 }

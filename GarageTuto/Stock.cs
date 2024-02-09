@@ -36,6 +36,7 @@ namespace GarageTuto
             stockInformationDataGrid.DataSource = dataSet.Tables[0];
 
             Database.Close();
+            updateNumberOf();
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -67,6 +68,7 @@ namespace GarageTuto
             {
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Warning", ex.Message);
+                Database.Close();
             }
         }
 
@@ -103,6 +105,7 @@ namespace GarageTuto
             {
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Warning", ex.Message);
+                Database.Close();
             }
         }
 
@@ -136,6 +139,7 @@ namespace GarageTuto
             {
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Warning", ex.Message);
+                Database.Close();
             }
         }
 
@@ -167,6 +171,11 @@ namespace GarageTuto
             quantityInput.Text = "";
             priceInput.Text = "";
             partId = 0;
+        }
+
+        private void updateNumberOf()
+        {
+            numberOfParts.Text = stockInformationDataGrid.RowCount.ToString();
         }
     }
 }

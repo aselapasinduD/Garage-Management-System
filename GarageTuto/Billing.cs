@@ -40,6 +40,7 @@ namespace GarageTuto
             stockDataGrid.DataSource = dataSet.Tables[0];
 
             Database.Close();
+            updateNumberOf();
         }
         private void getCarNumberList()
         {
@@ -90,6 +91,7 @@ namespace GarageTuto
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                     );
+                Database.Close();
                 return;
             }
 
@@ -237,6 +239,7 @@ namespace GarageTuto
             {
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Warning", ex.Message);
+                Database.Close();
             }
 
             try
@@ -273,6 +276,7 @@ namespace GarageTuto
             {
                 CustomMessageBox msgBox = new CustomMessageBox();
                 msgBox.Show("Warning", ex.Message);
+                Database.Close();
             }
         }
 
@@ -296,14 +300,14 @@ namespace GarageTuto
             totalPriceNumber.Text = totalFees.ToString();
         }
 
-        private void updateStockQuantityDatabase(int partId, int quantity)
-        {
-
-        }
-
         private void mechanicsFeeInput_TextChanged(object sender, EventArgs e)
         {
             updateTotalPrice();
+        }
+
+        private void updateNumberOf()
+        {
+            numberOfParts.Text = stockDataGrid.RowCount.ToString();
         }
     }
 }

@@ -48,6 +48,8 @@
             employeeInformationDataGrid = new DataGridView();
             genderInput = new ComboBox();
             manageEmployeesTitleHead = new Label();
+            numberOfEmployees = new Label();
+            numberOfEmployeesLabel = new Label();
             panel1.SuspendLayout();
             carServicingTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)employeeInformationDataGrid).BeginInit();
@@ -172,7 +174,9 @@
             // 
             carServicingTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             carServicingTable.BackColor = Color.DarkGray;
+            carServicingTable.Controls.Add(numberOfEmployees);
             carServicingTable.Controls.Add(employeeInformationDataGrid);
+            carServicingTable.Controls.Add(numberOfEmployeesLabel);
             carServicingTable.Controls.Add(genderInput);
             carServicingTable.Controls.Add(deleteButton);
             carServicingTable.Controls.Add(editButton);
@@ -271,6 +275,28 @@
             manageEmployeesTitleHead.TabIndex = 2;
             manageEmployeesTitleHead.Text = "Manage Employees";
             // 
+            // numberOfEmployees
+            // 
+            numberOfEmployees.AutoSize = true;
+            numberOfEmployees.BackColor = Color.Transparent;
+            numberOfEmployees.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numberOfEmployees.Location = new Point(1079, 145);
+            numberOfEmployees.Name = "numberOfEmployees";
+            numberOfEmployees.Size = new Size(17, 20);
+            numberOfEmployees.TabIndex = 8;
+            numberOfEmployees.Text = "0";
+            // 
+            // numberOfEmployeesLabel
+            // 
+            numberOfEmployeesLabel.AutoSize = true;
+            numberOfEmployeesLabel.BackColor = Color.Transparent;
+            numberOfEmployeesLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numberOfEmployeesLabel.Location = new Point(908, 145);
+            numberOfEmployeesLabel.Name = "numberOfEmployeesLabel";
+            numberOfEmployeesLabel.Size = new Size(165, 20);
+            numberOfEmployeesLabel.TabIndex = 7;
+            numberOfEmployeesLabel.Text = "Number of Employees:";
+            // 
             // Employees
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -306,5 +332,7 @@
         private Label manageEmployeesTitleHead;
         private ComboBox genderInput;
         private DataGridView employeeInformationDataGrid;
+        private Label numberOfEmployees;
+        private Label numberOfEmployeesLabel;
     }
 }

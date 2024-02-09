@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stock));
             partTableTitleHead = new Label();
             stockPanel = new Panel();
@@ -47,6 +47,8 @@
             quantityInput = new MaskedTextBox();
             partNameInput = new MaskedTextBox();
             partsInformationLableHead = new Label();
+            numberOfParts = new Label();
+            numberOfPartsLabel = new Label();
             stockPanel.SuspendLayout();
             carServicingTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)stockInformationDataGrid).BeginInit();
@@ -79,6 +81,8 @@
             // 
             carServicingTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             carServicingTable.BackColor = Color.DarkGray;
+            carServicingTable.Controls.Add(numberOfParts);
+            carServicingTable.Controls.Add(numberOfPartsLabel);
             carServicingTable.Controls.Add(stockInformationDataGrid);
             carServicingTable.Controls.Add(deleteButton);
             carServicingTable.Controls.Add(editButton);
@@ -108,23 +112,23 @@
             stockInformationDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             stockInformationDataGrid.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             stockInformationDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Black;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            stockInformationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.Black;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            stockInformationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             stockInformationDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.Black;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            stockInformationDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.Black;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            stockInformationDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
             stockInformationDataGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
             stockInformationDataGrid.GridColor = Color.Black;
             stockInformationDataGrid.ImeMode = ImeMode.Off;
@@ -133,16 +137,16 @@
             stockInformationDataGrid.Name = "stockInformationDataGrid";
             stockInformationDataGrid.ReadOnly = true;
             stockInformationDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            stockInformationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            stockInformationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             stockInformationDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.NullValue = "No data in this Cell";
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            stockInformationDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.NullValue = "No data in this Cell";
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            stockInformationDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
             stockInformationDataGrid.RowTemplate.Height = 30;
             stockInformationDataGrid.ScrollBars = ScrollBars.Horizontal;
             stockInformationDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -266,6 +270,28 @@
             partsInformationLableHead.TabIndex = 0;
             partsInformationLableHead.Text = "Parts Information";
             // 
+            // numberOfParts
+            // 
+            numberOfParts.AutoSize = true;
+            numberOfParts.BackColor = Color.Transparent;
+            numberOfParts.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numberOfParts.Location = new Point(1102, 145);
+            numberOfParts.Name = "numberOfParts";
+            numberOfParts.Size = new Size(17, 20);
+            numberOfParts.TabIndex = 10;
+            numberOfParts.Text = "0";
+            // 
+            // numberOfPartsLabel
+            // 
+            numberOfPartsLabel.AutoSize = true;
+            numberOfPartsLabel.BackColor = Color.Transparent;
+            numberOfPartsLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numberOfPartsLabel.Location = new Point(970, 145);
+            numberOfPartsLabel.Name = "numberOfPartsLabel";
+            numberOfPartsLabel.Size = new Size(126, 20);
+            numberOfPartsLabel.TabIndex = 9;
+            numberOfPartsLabel.Text = "Number of Parts:";
+            // 
             // Stock
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -300,5 +326,7 @@
         private MaskedTextBox partNameInput;
         private Label partsInformationLableHead;
         private DataGridView stockInformationDataGrid;
+        private Label numberOfParts;
+        private Label numberOfPartsLabel;
     }
 }

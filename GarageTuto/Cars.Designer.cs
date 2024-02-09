@@ -35,6 +35,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cars));
             carPanel = new Panel();
             carServicingTable = new Panel();
+            numberOfCars = new Label();
+            numberOfCarLabel = new Label();
             carInformationDataGrid = new DataGridView();
             carInformationDate = new DateTimePicker();
             deleteButton = new Button();
@@ -52,19 +54,9 @@
             carNumberInput = new MaskedTextBox();
             carInformationLableHead = new Label();
             carServicingTitleHead = new Label();
-            menuPanel = new Panel();
-            logoutMenuLable = new Label();
-            analyticsMenuLable = new Label();
-            billingMenuLable = new Label();
-            employeesMenuLable = new Label();
-            stockMenuLable = new Label();
-            carMenuLable = new Label();
-            carPictureLogo = new PictureBox();
             carPanel.SuspendLayout();
             carServicingTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carInformationDataGrid).BeginInit();
-            menuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             SuspendLayout();
             // 
             // carPanel
@@ -72,7 +64,6 @@
             carPanel.BackColor = Color.Black;
             carPanel.Controls.Add(carServicingTable);
             carPanel.Controls.Add(carServicingTitleHead);
-            carPanel.Controls.Add(menuPanel);
             carPanel.Dock = DockStyle.Fill;
             carPanel.Location = new Point(0, 0);
             carPanel.Name = "carPanel";
@@ -83,6 +74,8 @@
             // 
             carServicingTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             carServicingTable.BackColor = Color.DarkGray;
+            carServicingTable.Controls.Add(numberOfCars);
+            carServicingTable.Controls.Add(numberOfCarLabel);
             carServicingTable.Controls.Add(carInformationDataGrid);
             carServicingTable.Controls.Add(carInformationDate);
             carServicingTable.Controls.Add(deleteButton);
@@ -104,6 +97,28 @@
             carServicingTable.Name = "carServicingTable";
             carServicingTable.Size = new Size(1170, 716);
             carServicingTable.TabIndex = 3;
+            // 
+            // numberOfCars
+            // 
+            numberOfCars.AutoSize = true;
+            numberOfCars.BackColor = Color.Transparent;
+            numberOfCars.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numberOfCars.Location = new Point(1098, 184);
+            numberOfCars.Name = "numberOfCars";
+            numberOfCars.Size = new Size(17, 20);
+            numberOfCars.TabIndex = 6;
+            numberOfCars.Text = "0";
+            // 
+            // numberOfCarLabel
+            // 
+            numberOfCarLabel.AutoSize = true;
+            numberOfCarLabel.BackColor = Color.Transparent;
+            numberOfCarLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numberOfCarLabel.Location = new Point(971, 184);
+            numberOfCarLabel.Name = "numberOfCarLabel";
+            numberOfCarLabel.Size = new Size(121, 20);
+            numberOfCarLabel.TabIndex = 5;
+            numberOfCarLabel.Text = "Number of Cars:";
             // 
             // carInformationDataGrid
             // 
@@ -327,33 +342,6 @@
             carServicingTitleHead.TabIndex = 2;
             carServicingTitleHead.Text = "Record Cars for Servicing";
             // 
-            // menuPanel
-            // 
-            menuPanel.BackColor = Color.Gray;
-            menuPanel.Controls.Add(logoutMenuLable);
-            menuPanel.Controls.Add(analyticsMenuLable);
-            menuPanel.Controls.Add(billingMenuLable);
-            menuPanel.Controls.Add(employeesMenuLable);
-            menuPanel.Controls.Add(stockMenuLable);
-            menuPanel.Controls.Add(carMenuLable);
-            menuPanel.Controls.Add(carPictureLogo);
-            menuPanel.Dock = DockStyle.Left;
-            menuPanel.Location = new Point(0, 0);
-            menuPanel.Name = "menuPanel";
-            menuPanel.Size = new Size(169, 768);
-            menuPanel.TabIndex = 0;
-            // 
-            // carPictureLogo
-            // 
-            carPictureLogo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            carPictureLogo.Image = (Image)resources.GetObject("carPictureLogo.Image");
-            carPictureLogo.Location = new Point(3, 0);
-            carPictureLogo.Name = "carPictureLogo";
-            carPictureLogo.Size = new Size(163, 99);
-            carPictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
-            carPictureLogo.TabIndex = 1;
-            carPictureLogo.TabStop = false;
-            // 
             // Cars
             // 
             AccessibleName = "";
@@ -370,17 +358,12 @@
             carServicingTable.ResumeLayout(false);
             carServicingTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)carInformationDataGrid).EndInit();
-            menuPanel.ResumeLayout(false);
-            menuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)carPictureLogo).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel carPanel;
-        private Panel menuPanel;
-        private PictureBox carPictureLogo;
         private Label carServicingTitleHead;
         private Panel carServicingTable;
         private MaskedTextBox carNumberInput;
@@ -398,12 +381,8 @@
         private Button deleteButton;
         private Button editButton;
         private DateTimePicker carInformationDate;
-        private Label carMenuLable;
-        private Label analyticsMenuLable;
-        private Label billingMenuLable;
-        private Label employeesMenuLable;
-        private Label stockMenuLable;
-        private Label logoutMenuLable;
         private DataGridView carInformationDataGrid;
+        private Label numberOfCars;
+        private Label numberOfCarLabel;
     }
 }
