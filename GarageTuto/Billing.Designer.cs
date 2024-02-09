@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Billing));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle41 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle42 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle43 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle44 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle45 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle46 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle47 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle48 = new DataGridViewCellStyle();
             menuPanel = new Panel();
             logoutMenuLable = new Label();
             analyticsMenuLable = new Label();
@@ -54,6 +54,7 @@
             quantityInputLable = new Label();
             billingInformationLableHead = new Label();
             panel1 = new Panel();
+            employeeName = new Label();
             carServicingTable = new Panel();
             carDateShowingLabel = new Label();
             carOwnerNameShowLabel = new Label();
@@ -75,7 +76,6 @@
             mechanicsFeeInput = new MaskedTextBox();
             quantityInput = new MaskedTextBox();
             billingTitleHead = new Label();
-            employeeName = new Label();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             panel1.SuspendLayout();
@@ -111,6 +111,7 @@
             logoutMenuLable.Size = new Size(82, 30);
             logoutMenuLable.TabIndex = 2;
             logoutMenuLable.Text = "Logout";
+            logoutMenuLable.Click += logoutMenuLable_Click;
             // 
             // analyticsMenuLable
             // 
@@ -122,6 +123,7 @@
             analyticsMenuLable.Size = new Size(154, 30);
             analyticsMenuLable.TabIndex = 2;
             analyticsMenuLable.Text = "Analytics";
+            analyticsMenuLable.Click += analyticsMenuLable_Click;
             // 
             // billingMenuLable
             // 
@@ -133,6 +135,7 @@
             billingMenuLable.Size = new Size(154, 30);
             billingMenuLable.TabIndex = 2;
             billingMenuLable.Text = "Billing";
+            billingMenuLable.Click += billingMenuLable_Click;
             // 
             // employeesMenuLable
             // 
@@ -144,6 +147,7 @@
             employeesMenuLable.Size = new Size(154, 30);
             employeesMenuLable.TabIndex = 2;
             employeesMenuLable.Text = "Employees";
+            employeesMenuLable.Click += employeesMenuLable_Click;
             // 
             // stockMenuLable
             // 
@@ -155,6 +159,7 @@
             stockMenuLable.Size = new Size(154, 30);
             stockMenuLable.TabIndex = 2;
             stockMenuLable.Text = "Stock";
+            stockMenuLable.Click += stockMenuLable_Click;
             // 
             // carMenuLable
             // 
@@ -166,6 +171,7 @@
             carMenuLable.Size = new Size(154, 30);
             carMenuLable.TabIndex = 0;
             carMenuLable.Text = "Cars";
+            carMenuLable.Click += carMenuLable_Click;
             // 
             // carPictureLogo
             // 
@@ -288,6 +294,18 @@
             panel1.Size = new Size(1350, 729);
             panel1.TabIndex = 1;
             // 
+            // employeeName
+            // 
+            employeeName.AutoSize = true;
+            employeeName.BackColor = Color.Transparent;
+            employeeName.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            employeeName.ForeColor = Color.White;
+            employeeName.Location = new Point(1234, 13);
+            employeeName.Name = "employeeName";
+            employeeName.Size = new Size(104, 17);
+            employeeName.TabIndex = 4;
+            employeeName.Text = "Employee Name";
+            // 
             // carServicingTable
             // 
             carServicingTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -401,24 +419,24 @@
             billingDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             billingDataGrid.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             billingDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Black;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            billingDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle41.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = Color.Black;
+            dataGridViewCellStyle41.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle41.ForeColor = Color.White;
+            dataGridViewCellStyle41.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = DataGridViewTriState.True;
+            billingDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
             billingDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             billingDataGrid.Columns.AddRange(new DataGridViewColumn[] { numberTableHead, billingPartId, partsTableHead, quantityTableHead, priceTableHead, totalTableHead });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.Black;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            billingDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle42.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = Color.Black;
+            dataGridViewCellStyle42.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle42.ForeColor = Color.White;
+            dataGridViewCellStyle42.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle42.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = DataGridViewTriState.True;
+            billingDataGrid.DefaultCellStyle = dataGridViewCellStyle42;
             billingDataGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
             billingDataGrid.GridColor = Color.Black;
             billingDataGrid.ImeMode = ImeMode.Off;
@@ -427,16 +445,16 @@
             billingDataGrid.Name = "billingDataGrid";
             billingDataGrid.ReadOnly = true;
             billingDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            billingDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            billingDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle43;
             billingDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.NullValue = "No data in this Cell";
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            billingDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle44.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle44.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle44.ForeColor = Color.Black;
+            dataGridViewCellStyle44.NullValue = "No data in this Cell";
+            dataGridViewCellStyle44.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = SystemColors.HighlightText;
+            billingDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle44;
             billingDataGrid.RowTemplate.Height = 30;
             billingDataGrid.ScrollBars = ScrollBars.Horizontal;
             billingDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -520,23 +538,23 @@
             stockDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             stockDataGrid.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             stockDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.Black;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            stockDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle45.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = Color.Black;
+            dataGridViewCellStyle45.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle45.ForeColor = Color.White;
+            dataGridViewCellStyle45.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle45.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = DataGridViewTriState.True;
+            stockDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle45;
             stockDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.Black;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            stockDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle46.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle46.BackColor = Color.Black;
+            dataGridViewCellStyle46.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle46.ForeColor = Color.White;
+            dataGridViewCellStyle46.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle46.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle46.WrapMode = DataGridViewTriState.True;
+            stockDataGrid.DefaultCellStyle = dataGridViewCellStyle46;
             stockDataGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
             stockDataGrid.GridColor = Color.Black;
             stockDataGrid.ImeMode = ImeMode.Off;
@@ -545,16 +563,16 @@
             stockDataGrid.Name = "stockDataGrid";
             stockDataGrid.ReadOnly = true;
             stockDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            stockDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            stockDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle47;
             stockDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.NullValue = "No data in this Cell";
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            stockDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle48.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle48.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle48.ForeColor = Color.Black;
+            dataGridViewCellStyle48.NullValue = "No data in this Cell";
+            dataGridViewCellStyle48.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle48.SelectionForeColor = SystemColors.HighlightText;
+            stockDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle48;
             stockDataGrid.RowTemplate.Height = 30;
             stockDataGrid.ScrollBars = ScrollBars.Horizontal;
             stockDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -615,18 +633,6 @@
             billingTitleHead.Size = new Size(82, 31);
             billingTitleHead.TabIndex = 2;
             billingTitleHead.Text = "Billing";
-            // 
-            // employeeName
-            // 
-            employeeName.AutoSize = true;
-            employeeName.BackColor = Color.Transparent;
-            employeeName.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            employeeName.ForeColor = Color.White;
-            employeeName.Location = new Point(1234, 13);
-            employeeName.Name = "employeeName";
-            employeeName.Size = new Size(104, 17);
-            employeeName.TabIndex = 4;
-            employeeName.Text = "Employee Name";
             // 
             // Billing
             // 

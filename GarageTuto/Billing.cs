@@ -129,7 +129,7 @@ namespace GarageTuto
                         );
                     return;
                 }
-                
+
                 DataGridViewRow newRow = new DataGridViewRow();
                 newRow.CreateCells(billingDataGrid);
                 newRow.Cells[0].Value = number += 1;
@@ -242,7 +242,7 @@ namespace GarageTuto
             try
             {
                 Database.Open();
-                for(int i = 0; i < billingDataGrid.RowCount; ++i)
+                for (int i = 0; i < billingDataGrid.RowCount; ++i)
                 {
                     var billingPartId = billingDataGrid.Rows[i].Cells[1].Value;
 
@@ -287,7 +287,7 @@ namespace GarageTuto
                 totalFees = 0;
             }
             totalPartsFees = 0;
-            
+
             for (int i = 0; i < billingDataGrid.RowCount; ++i)
             {
                 totalFees += Convert.ToInt32(billingDataGrid.Rows[i].Cells[5].Value);
@@ -304,6 +304,49 @@ namespace GarageTuto
         private void mechanicsFeeInput_TextChanged(object sender, EventArgs e)
         {
             updateTotalPrice();
+        }
+
+        // Menu changing Functions
+        private void carMenuLable_Click(object sender, EventArgs e)
+        {
+            Cars obj = new Cars();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Location = this.Location;
+            obj.Show();
+            this.Hide();
+        }
+
+        private void stockMenuLable_Click(object sender, EventArgs e)
+        {
+            Stock obj = new Stock();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Location = this.Location;
+            obj.Show();
+            this.Hide();
+        }
+
+        private void employeesMenuLable_Click(object sender, EventArgs e)
+        {
+            Employees obj = new Employees();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Location = this.Location;
+            obj.Show();
+            this.Hide();
+        }
+
+        private void billingMenuLable_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void analyticsMenuLable_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logoutMenuLable_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -170,7 +170,6 @@
             carInformationDate.Name = "carInformationDate";
             carInformationDate.Size = new Size(200, 23);
             carInformationDate.TabIndex = 4;
-            carInformationDate.ValueChanged += carInforamationDate_ValueChanged;
             // 
             // deleteButton
             // 
@@ -427,7 +426,6 @@
             carPictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
             carPictureLogo.TabIndex = 1;
             carPictureLogo.TabStop = false;
-            carPictureLogo.Click += carPictureLogo_Click;
             // 
             // Cars
             // 

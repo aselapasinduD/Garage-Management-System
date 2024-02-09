@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employees));
             deleteButton = new Button();
             editButton = new Button();
@@ -213,23 +213,23 @@
             employeeInformationDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             employeeInformationDataGrid.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             employeeInformationDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.Black;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            employeeInformationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = Color.Black;
+            dataGridViewCellStyle21.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle21.ForeColor = Color.White;
+            dataGridViewCellStyle21.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = DataGridViewTriState.True;
+            employeeInformationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             employeeInformationDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.Black;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            employeeInformationDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = Color.Black;
+            dataGridViewCellStyle22.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle22.ForeColor = Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.True;
+            employeeInformationDataGrid.DefaultCellStyle = dataGridViewCellStyle22;
             employeeInformationDataGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
             employeeInformationDataGrid.GridColor = Color.Black;
             employeeInformationDataGrid.ImeMode = ImeMode.Off;
@@ -238,16 +238,16 @@
             employeeInformationDataGrid.Name = "employeeInformationDataGrid";
             employeeInformationDataGrid.ReadOnly = true;
             employeeInformationDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            employeeInformationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            employeeInformationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
             employeeInformationDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.NullValue = "No data in this Cell";
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            employeeInformationDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle24.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle24.ForeColor = Color.Black;
+            dataGridViewCellStyle24.NullValue = "No data in this Cell";
+            dataGridViewCellStyle24.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = SystemColors.HighlightText;
+            employeeInformationDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle24;
             employeeInformationDataGrid.RowTemplate.Height = 30;
             employeeInformationDataGrid.ScrollBars = ScrollBars.Horizontal;
             employeeInformationDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -309,6 +309,7 @@
             logoutMenuLable.Size = new Size(82, 30);
             logoutMenuLable.TabIndex = 2;
             logoutMenuLable.Text = "Logout";
+            logoutMenuLable.Click += logoutMenuLable_Click;
             // 
             // analyticsMenuLable
             // 
@@ -320,6 +321,7 @@
             analyticsMenuLable.Size = new Size(154, 30);
             analyticsMenuLable.TabIndex = 2;
             analyticsMenuLable.Text = "Analytics";
+            analyticsMenuLable.Click += analyticsMenuLable_Click;
             // 
             // billingMenuLable
             // 
@@ -331,6 +333,7 @@
             billingMenuLable.Size = new Size(154, 30);
             billingMenuLable.TabIndex = 2;
             billingMenuLable.Text = "Billing";
+            billingMenuLable.Click += billingMenuLable_Click;
             // 
             // employeesMenuLable
             // 
@@ -342,6 +345,7 @@
             employeesMenuLable.Size = new Size(154, 30);
             employeesMenuLable.TabIndex = 2;
             employeesMenuLable.Text = "Employees";
+            employeesMenuLable.Click += employeesMenuLable_Click;
             // 
             // stockMenuLable
             // 
@@ -353,6 +357,7 @@
             stockMenuLable.Size = new Size(154, 30);
             stockMenuLable.TabIndex = 2;
             stockMenuLable.Text = "Stock";
+            stockMenuLable.Click += stockMenuLable_Click;
             // 
             // carMenuLable
             // 
@@ -364,6 +369,7 @@
             carMenuLable.Size = new Size(154, 30);
             carMenuLable.TabIndex = 0;
             carMenuLable.Text = "Cars";
+            carMenuLable.Click += carMenuLable_Click;
             // 
             // carPictureLogo
             // 

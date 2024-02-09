@@ -177,22 +177,29 @@ namespace GarageTuto
 
         private void stockMenuLable_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void carPictureLogo_Click(object sender, EventArgs e)
-        {
-
+            Stock obj = new Stock();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Bounds = this.Bounds;
+            obj.Show();
+            this.Hide();
         }
 
         private void employeesMenuLable_Click(object sender, EventArgs e)
         {
-
+            Employees obj = new Employees();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Location = this.Location;
+            obj.Show();
+            this.Hide();
         }
 
         private void billingMenuLable_Click(object sender, EventArgs e)
         {
-
+            Billing obj = new Billing();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Location = this.Location;
+            obj.Show();
+            this.Hide();
         }
 
         private void analyticsMenuLable_Click(object sender, EventArgs e)
@@ -205,10 +212,6 @@ namespace GarageTuto
 
         }
 
-        private void carInforamationDate_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void clearInputs()
         {
