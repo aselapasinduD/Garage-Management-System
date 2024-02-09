@@ -168,50 +168,6 @@ namespace GarageTuto
                 msgBox.Show("Warning", ex.Message);
             }
         }
-        
-        // Menu Section functions
-        private void carMenuLable_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void stockMenuLable_Click(object sender, EventArgs e)
-        {
-            Stock obj = new Stock();
-            obj.StartPosition = FormStartPosition.CenterParent;
-            obj.Bounds = this.Bounds;
-            obj.Show();
-            this.Hide();
-        }
-
-        private void employeesMenuLable_Click(object sender, EventArgs e)
-        {
-            Employees obj = new Employees();
-            obj.StartPosition = FormStartPosition.CenterParent;
-            obj.Location = this.Location;
-            obj.Show();
-            this.Hide();
-        }
-
-        private void billingMenuLable_Click(object sender, EventArgs e)
-        {
-            Billing obj = new Billing();
-            obj.StartPosition = FormStartPosition.CenterParent;
-            obj.Location = this.Location;
-            obj.Show();
-            this.Hide();
-        }
-
-        private void analyticsMenuLable_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void logoutMenuLable_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void clearInputs()
         {

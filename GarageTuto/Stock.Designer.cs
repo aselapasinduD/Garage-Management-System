@@ -28,21 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stock));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            logoutMenuLable = new Label();
-            analyticsMenuLable = new Label();
-            billingMenuLable = new Label();
-            employeesMenuLable = new Label();
-            stockMenuLable = new Label();
-            carMenuLable = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stock));
             partTableTitleHead = new Label();
-            menuPanel = new Panel();
-            carPictureLogo = new PictureBox();
-            panel1 = new Panel();
+            stockPanel = new Panel();
             carServicingTable = new Panel();
             stockInformationDataGrid = new DataGridView();
             deleteButton = new Button();
@@ -55,85 +47,10 @@
             quantityInput = new MaskedTextBox();
             partNameInput = new MaskedTextBox();
             partsInformationLableHead = new Label();
-            menuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
-            panel1.SuspendLayout();
+            stockPanel.SuspendLayout();
             carServicingTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)stockInformationDataGrid).BeginInit();
             SuspendLayout();
-            // 
-            // logoutMenuLable
-            // 
-            logoutMenuLable.AutoSize = true;
-            logoutMenuLable.BackColor = Color.Transparent;
-            logoutMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            logoutMenuLable.ForeColor = Color.White;
-            logoutMenuLable.Location = new Point(41, 410);
-            logoutMenuLable.Name = "logoutMenuLable";
-            logoutMenuLable.Size = new Size(82, 30);
-            logoutMenuLable.TabIndex = 2;
-            logoutMenuLable.Text = "Logout";
-            logoutMenuLable.Click += logoutMenuLable_Click;
-            // 
-            // analyticsMenuLable
-            // 
-            analyticsMenuLable.BackColor = Color.Transparent;
-            analyticsMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            analyticsMenuLable.ForeColor = Color.White;
-            analyticsMenuLable.Location = new Point(15, 352);
-            analyticsMenuLable.Name = "analyticsMenuLable";
-            analyticsMenuLable.Size = new Size(154, 30);
-            analyticsMenuLable.TabIndex = 2;
-            analyticsMenuLable.Text = "Analytics";
-            analyticsMenuLable.Click += analyticsMenuLable_Click;
-            // 
-            // billingMenuLable
-            // 
-            billingMenuLable.BackColor = Color.Transparent;
-            billingMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            billingMenuLable.ForeColor = Color.White;
-            billingMenuLable.Location = new Point(15, 298);
-            billingMenuLable.Name = "billingMenuLable";
-            billingMenuLable.Size = new Size(154, 30);
-            billingMenuLable.TabIndex = 2;
-            billingMenuLable.Text = "Billing";
-            billingMenuLable.Click += billingMenuLable_Click;
-            // 
-            // employeesMenuLable
-            // 
-            employeesMenuLable.BackColor = Color.Transparent;
-            employeesMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employeesMenuLable.ForeColor = Color.White;
-            employeesMenuLable.Location = new Point(15, 244);
-            employeesMenuLable.Name = "employeesMenuLable";
-            employeesMenuLable.Size = new Size(154, 30);
-            employeesMenuLable.TabIndex = 2;
-            employeesMenuLable.Text = "Employees";
-            employeesMenuLable.Click += employeesMenuLable_Click;
-            // 
-            // stockMenuLable
-            // 
-            stockMenuLable.BackColor = Color.Black;
-            stockMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            stockMenuLable.ForeColor = Color.White;
-            stockMenuLable.Location = new Point(15, 190);
-            stockMenuLable.Name = "stockMenuLable";
-            stockMenuLable.Size = new Size(154, 30);
-            stockMenuLable.TabIndex = 2;
-            stockMenuLable.Text = "Stock";
-            stockMenuLable.Click += stockMenuLable_Click;
-            // 
-            // carMenuLable
-            // 
-            carMenuLable.BackColor = Color.Transparent;
-            carMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            carMenuLable.ForeColor = Color.White;
-            carMenuLable.Location = new Point(15, 140);
-            carMenuLable.Name = "carMenuLable";
-            carMenuLable.Size = new Size(154, 30);
-            carMenuLable.TabIndex = 0;
-            carMenuLable.Text = "Cars";
-            carMenuLable.Click += carMenuLable_Click;
             // 
             // partTableTitleHead
             // 
@@ -147,44 +64,16 @@
             partTableTitleHead.TabIndex = 2;
             partTableTitleHead.Text = "Record Cars for Servicing";
             // 
-            // menuPanel
+            // stockPanel
             // 
-            menuPanel.BackColor = Color.Gray;
-            menuPanel.Controls.Add(logoutMenuLable);
-            menuPanel.Controls.Add(analyticsMenuLable);
-            menuPanel.Controls.Add(billingMenuLable);
-            menuPanel.Controls.Add(employeesMenuLable);
-            menuPanel.Controls.Add(stockMenuLable);
-            menuPanel.Controls.Add(carMenuLable);
-            menuPanel.Controls.Add(carPictureLogo);
-            menuPanel.Dock = DockStyle.Left;
-            menuPanel.Location = new Point(0, 0);
-            menuPanel.Name = "menuPanel";
-            menuPanel.Size = new Size(169, 729);
-            menuPanel.TabIndex = 0;
-            // 
-            // carPictureLogo
-            // 
-            carPictureLogo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            carPictureLogo.Image = (Image)resources.GetObject("carPictureLogo.Image");
-            carPictureLogo.Location = new Point(3, 0);
-            carPictureLogo.Name = "carPictureLogo";
-            carPictureLogo.Size = new Size(163, 99);
-            carPictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
-            carPictureLogo.TabIndex = 1;
-            carPictureLogo.TabStop = false;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Black;
-            panel1.Controls.Add(carServicingTable);
-            panel1.Controls.Add(partTableTitleHead);
-            panel1.Controls.Add(menuPanel);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1350, 729);
-            panel1.TabIndex = 1;
+            stockPanel.BackColor = Color.Black;
+            stockPanel.Controls.Add(carServicingTable);
+            stockPanel.Controls.Add(partTableTitleHead);
+            stockPanel.Dock = DockStyle.Fill;
+            stockPanel.Location = new Point(0, 0);
+            stockPanel.Name = "stockPanel";
+            stockPanel.Size = new Size(1366, 768);
+            stockPanel.TabIndex = 1;
             // 
             // carServicingTable
             // 
@@ -204,7 +93,7 @@
             carServicingTable.Location = new Point(185, 40);
             carServicingTable.Margin = new Padding(8);
             carServicingTable.Name = "carServicingTable";
-            carServicingTable.Size = new Size(1154, 677);
+            carServicingTable.Size = new Size(1170, 716);
             carServicingTable.TabIndex = 3;
             // 
             // stockInformationDataGrid
@@ -261,7 +150,7 @@
             stockInformationDataGrid.ShowCellToolTips = false;
             stockInformationDataGrid.ShowEditingIcon = false;
             stockInformationDataGrid.ShowRowErrors = false;
-            stockInformationDataGrid.Size = new Size(1118, 493);
+            stockInformationDataGrid.Size = new Size(1134, 532);
             stockInformationDataGrid.TabIndex = 8;
             stockInformationDataGrid.CellClick += stockInformationDataGrid_CellClick;
             // 
@@ -381,17 +270,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1350, 729);
-            Controls.Add(panel1);
+            ClientSize = new Size(1366, 768);
+            Controls.Add(stockPanel);
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(1366, 768);
             Name = "Stock";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Garage Managment System(GSM)";
-            menuPanel.ResumeLayout(false);
-            menuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)carPictureLogo).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            stockPanel.ResumeLayout(false);
+            stockPanel.PerformLayout();
             carServicingTable.ResumeLayout(false);
             carServicingTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)stockInformationDataGrid).EndInit();
@@ -399,16 +286,8 @@
         }
 
         #endregion
-        private Label logoutMenuLable;
-        private Label analyticsMenuLable;
-        private Label billingMenuLable;
-        private Label employeesMenuLable;
-        private Label stockMenuLable;
-        private Label carMenuLable;
         private Label partTableTitleHead;
-        private Panel menuPanel;
-        private PictureBox carPictureLogo;
-        private Panel panel1;
+        private Panel stockPanel;
         private Panel carServicingTable;
         private Button deleteButton;
         private Button editButton;

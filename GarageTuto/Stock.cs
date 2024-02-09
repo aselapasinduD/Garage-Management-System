@@ -168,48 +168,5 @@ namespace GarageTuto
             priceInput.Text = "";
             partId = 0;
         }
-
-        // Menu changing Functions
-        private void carMenuLable_Click(object sender, EventArgs e)
-        {
-            Cars obj = new Cars();
-            obj.StartPosition = FormStartPosition.CenterParent;
-            obj.Location = this.Location;
-            obj.Show();
-            this.Hide();
-        }
-
-        private void stockMenuLable_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void employeesMenuLable_Click(object sender, EventArgs e)
-        {
-            Employees obj = new Employees();
-            obj.StartPosition = FormStartPosition.CenterParent;
-            obj.Location = this.Location;
-            obj.Show();
-            this.Hide();
-        }
-
-        private void billingMenuLable_Click(object sender, EventArgs e)
-        {
-            Billing obj = new Billing();
-            obj.StartPosition = FormStartPosition.CenterParent;
-            obj.Location = this.Location;
-            obj.Show();
-            this.Hide();
-        }
-
-        private void analyticsMenuLable_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void logoutMenuLable_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employees));
             deleteButton = new Button();
             editButton = new Button();
@@ -48,19 +48,9 @@
             employeeInformationDataGrid = new DataGridView();
             genderInput = new ComboBox();
             manageEmployeesTitleHead = new Label();
-            menuPanel = new Panel();
-            logoutMenuLable = new Label();
-            analyticsMenuLable = new Label();
-            billingMenuLable = new Label();
-            employeesMenuLable = new Label();
-            stockMenuLable = new Label();
-            carMenuLable = new Label();
-            carPictureLogo = new PictureBox();
             panel1.SuspendLayout();
             carServicingTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)employeeInformationDataGrid).BeginInit();
-            menuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             SuspendLayout();
             // 
             // deleteButton
@@ -172,7 +162,6 @@
             panel1.BackColor = Color.Black;
             panel1.Controls.Add(carServicingTable);
             panel1.Controls.Add(manageEmployeesTitleHead);
-            panel1.Controls.Add(menuPanel);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -213,23 +202,23 @@
             employeeInformationDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             employeeInformationDataGrid.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             employeeInformationDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = Color.Black;
-            dataGridViewCellStyle21.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle21.ForeColor = Color.White;
-            dataGridViewCellStyle21.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = DataGridViewTriState.True;
-            employeeInformationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Black;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            employeeInformationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             employeeInformationDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = Color.Black;
-            dataGridViewCellStyle22.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle22.ForeColor = Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.True;
-            employeeInformationDataGrid.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Black;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            employeeInformationDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             employeeInformationDataGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
             employeeInformationDataGrid.GridColor = Color.Black;
             employeeInformationDataGrid.ImeMode = ImeMode.Off;
@@ -238,16 +227,16 @@
             employeeInformationDataGrid.Name = "employeeInformationDataGrid";
             employeeInformationDataGrid.ReadOnly = true;
             employeeInformationDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            employeeInformationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            employeeInformationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             employeeInformationDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle24.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle24.ForeColor = Color.Black;
-            dataGridViewCellStyle24.NullValue = "No data in this Cell";
-            dataGridViewCellStyle24.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = SystemColors.HighlightText;
-            employeeInformationDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.NullValue = "No data in this Cell";
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            employeeInformationDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             employeeInformationDataGrid.RowTemplate.Height = 30;
             employeeInformationDataGrid.ScrollBars = ScrollBars.Horizontal;
             employeeInformationDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -282,114 +271,14 @@
             manageEmployeesTitleHead.TabIndex = 2;
             manageEmployeesTitleHead.Text = "Manage Employees";
             // 
-            // menuPanel
-            // 
-            menuPanel.BackColor = Color.Gray;
-            menuPanel.Controls.Add(logoutMenuLable);
-            menuPanel.Controls.Add(analyticsMenuLable);
-            menuPanel.Controls.Add(billingMenuLable);
-            menuPanel.Controls.Add(employeesMenuLable);
-            menuPanel.Controls.Add(stockMenuLable);
-            menuPanel.Controls.Add(carMenuLable);
-            menuPanel.Controls.Add(carPictureLogo);
-            menuPanel.Dock = DockStyle.Left;
-            menuPanel.Location = new Point(0, 0);
-            menuPanel.Name = "menuPanel";
-            menuPanel.Size = new Size(169, 729);
-            menuPanel.TabIndex = 0;
-            // 
-            // logoutMenuLable
-            // 
-            logoutMenuLable.AutoSize = true;
-            logoutMenuLable.BackColor = Color.Transparent;
-            logoutMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            logoutMenuLable.ForeColor = Color.White;
-            logoutMenuLable.Location = new Point(41, 410);
-            logoutMenuLable.Name = "logoutMenuLable";
-            logoutMenuLable.Size = new Size(82, 30);
-            logoutMenuLable.TabIndex = 2;
-            logoutMenuLable.Text = "Logout";
-            logoutMenuLable.Click += logoutMenuLable_Click;
-            // 
-            // analyticsMenuLable
-            // 
-            analyticsMenuLable.BackColor = Color.Transparent;
-            analyticsMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            analyticsMenuLable.ForeColor = Color.White;
-            analyticsMenuLable.Location = new Point(15, 352);
-            analyticsMenuLable.Name = "analyticsMenuLable";
-            analyticsMenuLable.Size = new Size(154, 30);
-            analyticsMenuLable.TabIndex = 2;
-            analyticsMenuLable.Text = "Analytics";
-            analyticsMenuLable.Click += analyticsMenuLable_Click;
-            // 
-            // billingMenuLable
-            // 
-            billingMenuLable.BackColor = Color.Transparent;
-            billingMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            billingMenuLable.ForeColor = Color.White;
-            billingMenuLable.Location = new Point(15, 298);
-            billingMenuLable.Name = "billingMenuLable";
-            billingMenuLable.Size = new Size(154, 30);
-            billingMenuLable.TabIndex = 2;
-            billingMenuLable.Text = "Billing";
-            billingMenuLable.Click += billingMenuLable_Click;
-            // 
-            // employeesMenuLable
-            // 
-            employeesMenuLable.BackColor = Color.Black;
-            employeesMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employeesMenuLable.ForeColor = Color.White;
-            employeesMenuLable.Location = new Point(15, 244);
-            employeesMenuLable.Name = "employeesMenuLable";
-            employeesMenuLable.Size = new Size(154, 30);
-            employeesMenuLable.TabIndex = 2;
-            employeesMenuLable.Text = "Employees";
-            employeesMenuLable.Click += employeesMenuLable_Click;
-            // 
-            // stockMenuLable
-            // 
-            stockMenuLable.BackColor = Color.Transparent;
-            stockMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            stockMenuLable.ForeColor = Color.White;
-            stockMenuLable.Location = new Point(15, 190);
-            stockMenuLable.Name = "stockMenuLable";
-            stockMenuLable.Size = new Size(154, 30);
-            stockMenuLable.TabIndex = 2;
-            stockMenuLable.Text = "Stock";
-            stockMenuLable.Click += stockMenuLable_Click;
-            // 
-            // carMenuLable
-            // 
-            carMenuLable.BackColor = Color.Transparent;
-            carMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            carMenuLable.ForeColor = Color.White;
-            carMenuLable.Location = new Point(15, 140);
-            carMenuLable.Name = "carMenuLable";
-            carMenuLable.Size = new Size(154, 30);
-            carMenuLable.TabIndex = 0;
-            carMenuLable.Text = "Cars";
-            carMenuLable.Click += carMenuLable_Click;
-            // 
-            // carPictureLogo
-            // 
-            carPictureLogo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            carPictureLogo.Image = (Image)resources.GetObject("carPictureLogo.Image");
-            carPictureLogo.Location = new Point(3, 0);
-            carPictureLogo.Name = "carPictureLogo";
-            carPictureLogo.Size = new Size(163, 99);
-            carPictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
-            carPictureLogo.TabIndex = 1;
-            carPictureLogo.TabStop = false;
-            // 
             // Employees
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1350, 729);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(1366, 768);
             Name = "Employees";
             Text = "Garage Managment System(GSM)";
             panel1.ResumeLayout(false);
@@ -397,9 +286,6 @@
             carServicingTable.ResumeLayout(false);
             carServicingTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)employeeInformationDataGrid).EndInit();
-            menuPanel.ResumeLayout(false);
-            menuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)carPictureLogo).EndInit();
             ResumeLayout(false);
         }
 
@@ -418,14 +304,6 @@
         private Panel panel1;
         private Panel carServicingTable;
         private Label manageEmployeesTitleHead;
-        private Panel menuPanel;
-        private Label logoutMenuLable;
-        private Label analyticsMenuLable;
-        private Label billingMenuLable;
-        private Label employeesMenuLable;
-        private Label stockMenuLable;
-        private Label carMenuLable;
-        private PictureBox carPictureLogo;
         private ComboBox genderInput;
         private DataGridView employeeInformationDataGrid;
     }

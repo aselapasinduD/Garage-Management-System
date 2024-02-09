@@ -33,7 +33,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cars));
-            panel1 = new Panel();
+            carPanel = new Panel();
             carServicingTable = new Panel();
             carInformationDataGrid = new DataGridView();
             carInformationDate = new DateTimePicker();
@@ -60,24 +60,24 @@
             stockMenuLable = new Label();
             carMenuLable = new Label();
             carPictureLogo = new PictureBox();
-            panel1.SuspendLayout();
+            carPanel.SuspendLayout();
             carServicingTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carInformationDataGrid).BeginInit();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // carPanel
             // 
-            panel1.BackColor = Color.Black;
-            panel1.Controls.Add(carServicingTable);
-            panel1.Controls.Add(carServicingTitleHead);
-            panel1.Controls.Add(menuPanel);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1350, 729);
-            panel1.TabIndex = 0;
+            carPanel.BackColor = Color.Black;
+            carPanel.Controls.Add(carServicingTable);
+            carPanel.Controls.Add(carServicingTitleHead);
+            carPanel.Controls.Add(menuPanel);
+            carPanel.Dock = DockStyle.Fill;
+            carPanel.Location = new Point(0, 0);
+            carPanel.Name = "carPanel";
+            carPanel.Size = new Size(1366, 768);
+            carPanel.TabIndex = 0;
             // 
             // carServicingTable
             // 
@@ -102,7 +102,7 @@
             carServicingTable.Location = new Point(185, 40);
             carServicingTable.Margin = new Padding(8);
             carServicingTable.Name = "carServicingTable";
-            carServicingTable.Size = new Size(1154, 677);
+            carServicingTable.Size = new Size(1170, 716);
             carServicingTable.TabIndex = 3;
             // 
             // carInformationDataGrid
@@ -159,7 +159,7 @@
             carInformationDataGrid.ShowCellToolTips = false;
             carInformationDataGrid.ShowEditingIcon = false;
             carInformationDataGrid.ShowRowErrors = false;
-            carInformationDataGrid.Size = new Size(1118, 454);
+            carInformationDataGrid.Size = new Size(1134, 493);
             carInformationDataGrid.TabIndex = 0;
             carInformationDataGrid.CellClick += carInformationDataGrid_CellContentClick;
             // 
@@ -340,81 +340,8 @@
             menuPanel.Dock = DockStyle.Left;
             menuPanel.Location = new Point(0, 0);
             menuPanel.Name = "menuPanel";
-            menuPanel.Size = new Size(169, 729);
+            menuPanel.Size = new Size(169, 768);
             menuPanel.TabIndex = 0;
-            // 
-            // logoutMenuLable
-            // 
-            logoutMenuLable.AutoSize = true;
-            logoutMenuLable.BackColor = Color.Transparent;
-            logoutMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            logoutMenuLable.ForeColor = Color.White;
-            logoutMenuLable.Location = new Point(41, 410);
-            logoutMenuLable.Name = "logoutMenuLable";
-            logoutMenuLable.Size = new Size(82, 30);
-            logoutMenuLable.TabIndex = 2;
-            logoutMenuLable.Text = "Logout";
-            logoutMenuLable.Click += logoutMenuLable_Click;
-            // 
-            // analyticsMenuLable
-            // 
-            analyticsMenuLable.BackColor = Color.Transparent;
-            analyticsMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            analyticsMenuLable.ForeColor = Color.White;
-            analyticsMenuLable.Location = new Point(15, 352);
-            analyticsMenuLable.Name = "analyticsMenuLable";
-            analyticsMenuLable.Size = new Size(154, 30);
-            analyticsMenuLable.TabIndex = 2;
-            analyticsMenuLable.Text = "Analytics";
-            analyticsMenuLable.Click += analyticsMenuLable_Click;
-            // 
-            // billingMenuLable
-            // 
-            billingMenuLable.BackColor = Color.Transparent;
-            billingMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            billingMenuLable.ForeColor = Color.White;
-            billingMenuLable.Location = new Point(15, 298);
-            billingMenuLable.Name = "billingMenuLable";
-            billingMenuLable.Size = new Size(154, 30);
-            billingMenuLable.TabIndex = 2;
-            billingMenuLable.Text = "Billing";
-            billingMenuLable.Click += billingMenuLable_Click;
-            // 
-            // employeesMenuLable
-            // 
-            employeesMenuLable.BackColor = Color.Transparent;
-            employeesMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employeesMenuLable.ForeColor = Color.White;
-            employeesMenuLable.Location = new Point(15, 244);
-            employeesMenuLable.Name = "employeesMenuLable";
-            employeesMenuLable.Size = new Size(154, 30);
-            employeesMenuLable.TabIndex = 2;
-            employeesMenuLable.Text = "Employees";
-            employeesMenuLable.Click += employeesMenuLable_Click;
-            // 
-            // stockMenuLable
-            // 
-            stockMenuLable.BackColor = Color.Transparent;
-            stockMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            stockMenuLable.ForeColor = Color.White;
-            stockMenuLable.Location = new Point(15, 190);
-            stockMenuLable.Name = "stockMenuLable";
-            stockMenuLable.Size = new Size(154, 30);
-            stockMenuLable.TabIndex = 2;
-            stockMenuLable.Text = "Stock";
-            stockMenuLable.Click += stockMenuLable_Click;
-            // 
-            // carMenuLable
-            // 
-            carMenuLable.BackColor = Color.Black;
-            carMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            carMenuLable.ForeColor = Color.White;
-            carMenuLable.Location = new Point(15, 140);
-            carMenuLable.Name = "carMenuLable";
-            carMenuLable.Size = new Size(154, 30);
-            carMenuLable.TabIndex = 0;
-            carMenuLable.Text = "Cars";
-            carMenuLable.Click += carMenuLable_Click;
             // 
             // carPictureLogo
             // 
@@ -432,14 +359,14 @@
             AccessibleName = "";
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1350, 729);
-            Controls.Add(panel1);
+            ClientSize = new Size(1366, 768);
+            Controls.Add(carPanel);
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(1366, 768);
             Name = "Cars";
             Text = "Garage Managment System(GSM)";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            carPanel.ResumeLayout(false);
+            carPanel.PerformLayout();
             carServicingTable.ResumeLayout(false);
             carServicingTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)carInformationDataGrid).EndInit();
@@ -451,7 +378,7 @@
 
         #endregion
 
-        private Panel panel1;
+        private Panel carPanel;
         private Panel menuPanel;
         private PictureBox carPictureLogo;
         private Label carServicingTitleHead;
