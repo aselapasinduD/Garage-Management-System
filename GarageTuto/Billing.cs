@@ -74,13 +74,6 @@ namespace GarageTuto
                 carDateShowingLabel.Text = DateTime.Parse(reader[0].ToString()).ToString("MM/dd/yyyy");
                 reader.Close();
 
-                /*while (reader.Read())
-                {
-                    for (int i = 0; i < reader.FieldCount; i++)
-                    {
-                        Debug.WriteLine("{0} ", reader[i]);
-                    }
-                }*/
                 Database.Close();
             }
             catch (Exception ex)

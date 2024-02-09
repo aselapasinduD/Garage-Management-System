@@ -15,7 +15,7 @@ namespace GarageTuto
         public MainWindow()
         {
             InitializeComponent();
-            loadForm(new Cars());
+            loadForm(new Analytics());
         }
 
         public void loadForm(object Form)

@@ -73,7 +73,7 @@
             // 
             // analyticsMenuLable
             // 
-            analyticsMenuLable.BackColor = Color.Transparent;
+            analyticsMenuLable.BackColor = Color.Black;
             analyticsMenuLable.Cursor = Cursors.Hand;
             analyticsMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             analyticsMenuLable.ForeColor = Color.White;
@@ -125,7 +125,7 @@
             // 
             // carMenuLable
             // 
-            carMenuLable.BackColor = Color.Black;
+            carMenuLable.BackColor = Color.Transparent;
             carMenuLable.Cursor = Cursors.Hand;
             carMenuLable.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             carMenuLable.ForeColor = Color.White;
