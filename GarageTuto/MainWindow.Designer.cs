@@ -163,9 +163,10 @@
             ClientSize = new Size(1350, 729);
             Controls.Add(menuPanel);
             Controls.Add(mainPanel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(1366, 768);
             Name = "MainWindow";
-            Text = "MainWindow";
+            Text = "Garage Managment System(GSM)";
             menuPanel.ResumeLayout(false);
             menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).EndInit();

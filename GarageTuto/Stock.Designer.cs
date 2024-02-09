@@ -35,7 +35,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stock));
             partTableTitleHead = new Label();
             stockPanel = new Panel();
-            carServicingTable = new Panel();
+            stockTable = new Panel();
+            numberOfParts = new Label();
+            numberOfPartsLabel = new Label();
             stockInformationDataGrid = new DataGridView();
             deleteButton = new Button();
             editButton = new Button();
@@ -47,10 +49,8 @@
             quantityInput = new MaskedTextBox();
             partNameInput = new MaskedTextBox();
             partsInformationLableHead = new Label();
-            numberOfParts = new Label();
-            numberOfPartsLabel = new Label();
             stockPanel.SuspendLayout();
-            carServicingTable.SuspendLayout();
+            stockTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)stockInformationDataGrid).BeginInit();
             SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             // stockPanel
             // 
             stockPanel.BackColor = Color.Black;
-            stockPanel.Controls.Add(carServicingTable);
+            stockPanel.Controls.Add(stockTable);
             stockPanel.Controls.Add(partTableTitleHead);
             stockPanel.Dock = DockStyle.Fill;
             stockPanel.Location = new Point(0, 0);
@@ -77,28 +77,50 @@
             stockPanel.Size = new Size(1366, 768);
             stockPanel.TabIndex = 1;
             // 
-            // carServicingTable
+            // stockTable
             // 
-            carServicingTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            carServicingTable.BackColor = Color.DarkGray;
-            carServicingTable.Controls.Add(numberOfParts);
-            carServicingTable.Controls.Add(numberOfPartsLabel);
-            carServicingTable.Controls.Add(stockInformationDataGrid);
-            carServicingTable.Controls.Add(deleteButton);
-            carServicingTable.Controls.Add(editButton);
-            carServicingTable.Controls.Add(addButton);
-            carServicingTable.Controls.Add(priceInputLable);
-            carServicingTable.Controls.Add(quantityInputLable);
-            carServicingTable.Controls.Add(partNumberInputLable);
-            carServicingTable.Controls.Add(priceInput);
-            carServicingTable.Controls.Add(quantityInput);
-            carServicingTable.Controls.Add(partNameInput);
-            carServicingTable.Controls.Add(partsInformationLableHead);
-            carServicingTable.Location = new Point(185, 40);
-            carServicingTable.Margin = new Padding(8);
-            carServicingTable.Name = "carServicingTable";
-            carServicingTable.Size = new Size(1170, 716);
-            carServicingTable.TabIndex = 3;
+            stockTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            stockTable.BackColor = Color.DarkGray;
+            stockTable.Controls.Add(numberOfParts);
+            stockTable.Controls.Add(numberOfPartsLabel);
+            stockTable.Controls.Add(stockInformationDataGrid);
+            stockTable.Controls.Add(deleteButton);
+            stockTable.Controls.Add(editButton);
+            stockTable.Controls.Add(addButton);
+            stockTable.Controls.Add(priceInputLable);
+            stockTable.Controls.Add(quantityInputLable);
+            stockTable.Controls.Add(partNumberInputLable);
+            stockTable.Controls.Add(priceInput);
+            stockTable.Controls.Add(quantityInput);
+            stockTable.Controls.Add(partNameInput);
+            stockTable.Controls.Add(partsInformationLableHead);
+            stockTable.Location = new Point(185, 40);
+            stockTable.Margin = new Padding(8);
+            stockTable.Name = "stockTable";
+            stockTable.Size = new Size(1170, 716);
+            stockTable.TabIndex = 3;
+            // 
+            // numberOfParts
+            // 
+            numberOfParts.AutoSize = true;
+            numberOfParts.BackColor = Color.Transparent;
+            numberOfParts.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numberOfParts.Location = new Point(1102, 145);
+            numberOfParts.Name = "numberOfParts";
+            numberOfParts.Size = new Size(17, 20);
+            numberOfParts.TabIndex = 10;
+            numberOfParts.Text = "0";
+            // 
+            // numberOfPartsLabel
+            // 
+            numberOfPartsLabel.AutoSize = true;
+            numberOfPartsLabel.BackColor = Color.Transparent;
+            numberOfPartsLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numberOfPartsLabel.Location = new Point(970, 145);
+            numberOfPartsLabel.Name = "numberOfPartsLabel";
+            numberOfPartsLabel.Size = new Size(126, 20);
+            numberOfPartsLabel.TabIndex = 9;
+            numberOfPartsLabel.Text = "Number of Parts:";
             // 
             // stockInformationDataGrid
             // 
@@ -270,28 +292,6 @@
             partsInformationLableHead.TabIndex = 0;
             partsInformationLableHead.Text = "Parts Information";
             // 
-            // numberOfParts
-            // 
-            numberOfParts.AutoSize = true;
-            numberOfParts.BackColor = Color.Transparent;
-            numberOfParts.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            numberOfParts.Location = new Point(1102, 145);
-            numberOfParts.Name = "numberOfParts";
-            numberOfParts.Size = new Size(17, 20);
-            numberOfParts.TabIndex = 10;
-            numberOfParts.Text = "0";
-            // 
-            // numberOfPartsLabel
-            // 
-            numberOfPartsLabel.AutoSize = true;
-            numberOfPartsLabel.BackColor = Color.Transparent;
-            numberOfPartsLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            numberOfPartsLabel.Location = new Point(970, 145);
-            numberOfPartsLabel.Name = "numberOfPartsLabel";
-            numberOfPartsLabel.Size = new Size(126, 20);
-            numberOfPartsLabel.TabIndex = 9;
-            numberOfPartsLabel.Text = "Number of Parts:";
-            // 
             // Stock
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -305,8 +305,8 @@
             Text = "Garage Managment System(GSM)";
             stockPanel.ResumeLayout(false);
             stockPanel.PerformLayout();
-            carServicingTable.ResumeLayout(false);
-            carServicingTable.PerformLayout();
+            stockTable.ResumeLayout(false);
+            stockTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)stockInformationDataGrid).EndInit();
             ResumeLayout(false);
         }
@@ -314,7 +314,7 @@
         #endregion
         private Label partTableTitleHead;
         private Panel stockPanel;
-        private Panel carServicingTable;
+        private Panel stockTable;
         private Button deleteButton;
         private Button editButton;
         private Button addButton;

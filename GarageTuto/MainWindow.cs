@@ -73,6 +73,12 @@ namespace GarageTuto
         private void analyticsMenuLable_Click(object sender, EventArgs e)
         {
 
+            loadForm(new Analytics());
+            stockMenuLable.BackColor = Color.Transparent;
+            carMenuLable.BackColor = Color.Transparent;
+            employeesMenuLable.BackColor = Color.Transparent;
+            billingMenuLable.BackColor = Color.Transparent;
+            analyticsMenuLable.BackColor = Color.Black;
         }
     }
 }
