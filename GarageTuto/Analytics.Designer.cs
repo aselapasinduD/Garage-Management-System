@@ -64,7 +64,7 @@
             analyticsPanel.Controls.Add(DashBoardTitleHead);
             analyticsPanel.Location = new Point(0, 0);
             analyticsPanel.Name = "analyticsPanel";
-            analyticsPanel.Size = new Size(1366, 768);
+            analyticsPanel.Size = new Size(1350, 729);
             analyticsPanel.TabIndex = 2;
             // 
             // analyticsTable
@@ -79,7 +79,7 @@
             analyticsTable.Location = new Point(185, 40);
             analyticsTable.Margin = new Padding(8);
             analyticsTable.Name = "analyticsTable";
-            analyticsTable.Size = new Size(1170, 716);
+            analyticsTable.Size = new Size(1154, 677);
             analyticsTable.TabIndex = 3;
             // 
             // panel6
@@ -269,7 +269,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1366, 768);
+            ClientSize = new Size(1350, 729);
             Controls.Add(analyticsPanel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Analytics";

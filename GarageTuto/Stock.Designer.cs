@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stock));
             partTableTitleHead = new Label();
             stockPanel = new Panel();
@@ -74,7 +74,7 @@
             stockPanel.Dock = DockStyle.Fill;
             stockPanel.Location = new Point(0, 0);
             stockPanel.Name = "stockPanel";
-            stockPanel.Size = new Size(1366, 768);
+            stockPanel.Size = new Size(1350, 729);
             stockPanel.TabIndex = 1;
             // 
             // stockTable
@@ -97,7 +97,7 @@
             stockTable.Location = new Point(185, 40);
             stockTable.Margin = new Padding(8);
             stockTable.Name = "stockTable";
-            stockTable.Size = new Size(1170, 716);
+            stockTable.Size = new Size(1154, 677);
             stockTable.TabIndex = 3;
             // 
             // numberOfParts
@@ -134,23 +134,23 @@
             stockInformationDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             stockInformationDataGrid.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             stockInformationDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.Black;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            stockInformationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Black;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            stockInformationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             stockInformationDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.Black;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            stockInformationDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Black;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            stockInformationDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             stockInformationDataGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
             stockInformationDataGrid.GridColor = Color.Black;
             stockInformationDataGrid.ImeMode = ImeMode.Off;
@@ -159,16 +159,16 @@
             stockInformationDataGrid.Name = "stockInformationDataGrid";
             stockInformationDataGrid.ReadOnly = true;
             stockInformationDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            stockInformationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            stockInformationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             stockInformationDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.NullValue = "No data in this Cell";
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            stockInformationDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.NullValue = "No data in this Cell";
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            stockInformationDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             stockInformationDataGrid.RowTemplate.Height = 30;
             stockInformationDataGrid.ScrollBars = ScrollBars.Horizontal;
             stockInformationDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -176,7 +176,7 @@
             stockInformationDataGrid.ShowCellToolTips = false;
             stockInformationDataGrid.ShowEditingIcon = false;
             stockInformationDataGrid.ShowRowErrors = false;
-            stockInformationDataGrid.Size = new Size(1134, 532);
+            stockInformationDataGrid.Size = new Size(1118, 493);
             stockInformationDataGrid.TabIndex = 8;
             stockInformationDataGrid.CellClick += stockInformationDataGrid_CellClick;
             // 
@@ -296,7 +296,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1366, 768);
+            ClientSize = new Size(1350, 729);
             Controls.Add(stockPanel);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");

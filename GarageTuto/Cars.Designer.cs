@@ -67,7 +67,7 @@
             carPanel.Dock = DockStyle.Fill;
             carPanel.Location = new Point(0, 0);
             carPanel.Name = "carPanel";
-            carPanel.Size = new Size(1366, 768);
+            carPanel.Size = new Size(1350, 729);
             carPanel.TabIndex = 0;
             // 
             // carServicingTable
@@ -95,7 +95,7 @@
             carServicingTable.Location = new Point(185, 40);
             carServicingTable.Margin = new Padding(8);
             carServicingTable.Name = "carServicingTable";
-            carServicingTable.Size = new Size(1170, 716);
+            carServicingTable.Size = new Size(1154, 677);
             carServicingTable.TabIndex = 3;
             // 
             // numberOfCars
@@ -174,7 +174,7 @@
             carInformationDataGrid.ShowCellToolTips = false;
             carInformationDataGrid.ShowEditingIcon = false;
             carInformationDataGrid.ShowRowErrors = false;
-            carInformationDataGrid.Size = new Size(1134, 493);
+            carInformationDataGrid.Size = new Size(1118, 454);
             carInformationDataGrid.TabIndex = 0;
             carInformationDataGrid.CellClick += carInformationDataGrid_CellContentClick;
             // 
@@ -347,7 +347,7 @@
             AccessibleName = "";
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1366, 768);
+            ClientSize = new Size(1350, 729);
             Controls.Add(carPanel);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
