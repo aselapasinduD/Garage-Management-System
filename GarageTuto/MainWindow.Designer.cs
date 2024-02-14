@@ -79,6 +79,7 @@
             analyticsMenuLable.ForeColor = Color.White;
             analyticsMenuLable.Location = new Point(15, 352);
             analyticsMenuLable.Name = "analyticsMenuLable";
+            analyticsMenuLable.Padding = new Padding(6, 0, 0, 0);
             analyticsMenuLable.Size = new Size(154, 30);
             analyticsMenuLable.TabIndex = 2;
             analyticsMenuLable.Text = "Analytics";
@@ -92,6 +93,7 @@
             billingMenuLable.ForeColor = Color.White;
             billingMenuLable.Location = new Point(15, 298);
             billingMenuLable.Name = "billingMenuLable";
+            billingMenuLable.Padding = new Padding(6, 0, 0, 0);
             billingMenuLable.Size = new Size(154, 30);
             billingMenuLable.TabIndex = 2;
             billingMenuLable.Text = "Billing";
@@ -105,6 +107,7 @@
             employeesMenuLable.ForeColor = Color.White;
             employeesMenuLable.Location = new Point(15, 244);
             employeesMenuLable.Name = "employeesMenuLable";
+            employeesMenuLable.Padding = new Padding(6, 0, 0, 0);
             employeesMenuLable.Size = new Size(154, 30);
             employeesMenuLable.TabIndex = 2;
             employeesMenuLable.Text = "Employees";
@@ -118,6 +121,7 @@
             stockMenuLable.ForeColor = Color.White;
             stockMenuLable.Location = new Point(15, 190);
             stockMenuLable.Name = "stockMenuLable";
+            stockMenuLable.Padding = new Padding(6, 0, 0, 0);
             stockMenuLable.Size = new Size(154, 30);
             stockMenuLable.TabIndex = 2;
             stockMenuLable.Text = "Stock";
@@ -131,6 +135,7 @@
             carMenuLable.ForeColor = Color.White;
             carMenuLable.Location = new Point(15, 140);
             carMenuLable.Name = "carMenuLable";
+            carMenuLable.Padding = new Padding(6, 0, 0, 0);
             carMenuLable.Size = new Size(154, 30);
             carMenuLable.TabIndex = 0;
             carMenuLable.Text = "Cars";
