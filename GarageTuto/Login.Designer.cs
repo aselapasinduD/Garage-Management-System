@@ -115,11 +115,13 @@
             signInButton.TabIndex = 12;
             signInButton.Text = "Sign In";
             signInButton.UseVisualStyleBackColor = true;
+            signInButton.Click += signInButton_Click;
             // 
             // adminSignIn
             // 
             adminSignIn.AutoSize = true;
             adminSignIn.BackColor = Color.Transparent;
+            adminSignIn.Cursor = Cursors.Hand;
             adminSignIn.Font = new Font("Segoe UI", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
             adminSignIn.Location = new Point(110, 310);
             adminSignIn.Name = "adminSignIn";

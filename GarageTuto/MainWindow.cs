@@ -12,10 +12,32 @@ namespace GarageTuto
 {
     public partial class MainWindow : Form
     {
-        public MainWindow()
+        private static String Role = "";
+        public MainWindow(String role, String userName)
         {
             InitializeComponent();
-            loadForm(new Analytics());
+
+            if (role == "Admin")
+                loadForm(new Analytics());
+            else
+            {
+                loadForm(new Billing(userName));
+                stockMenuLable.BackColor = Color.Transparent;
+                carMenuLable.BackColor = Color.Transparent;
+                employeesMenuLable.BackColor = Color.Transparent;
+                employeesMenuLable.ForeColor = Color.DimGray;
+                billingMenuLable.BackColor = Color.Black;
+                analyticsMenuLable.BackColor = Color.Transparent;
+            }
+
+            Role = role;
+            UserName.Text = userName;
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+            Application.Exit();
         }
 
         public void loadForm(object Form)
@@ -52,6 +74,16 @@ namespace GarageTuto
 
         private void employeesMenuLable_Click(object sender, EventArgs e)
         {
+            if (Role != "Admin")
+            {
+                MessageBox.Show(
+                    "Only Admin Have Access.",
+                    "Admin",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+                return;
+            }
             loadForm(new Employees());
             stockMenuLable.BackColor = Color.Transparent;
             carMenuLable.BackColor = Color.Transparent;
@@ -62,7 +94,7 @@ namespace GarageTuto
 
         private void billingMenuLable_Click(object sender, EventArgs e)
         {
-            loadForm(new Billing());
+            loadForm(new Billing(UserName.Text));
             stockMenuLable.BackColor = Color.Transparent;
             carMenuLable.BackColor = Color.Transparent;
             employeesMenuLable.BackColor = Color.Transparent;
@@ -79,6 +111,11 @@ namespace GarageTuto
             employeesMenuLable.BackColor = Color.Transparent;
             billingMenuLable.BackColor = Color.Transparent;
             analyticsMenuLable.BackColor = Color.Black;
+        }
+
+        private void logoutMenuLable_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

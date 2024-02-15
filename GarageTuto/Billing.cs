@@ -15,11 +15,13 @@ namespace GarageTuto
 {
     public partial class Billing : Form
     {
-        public Billing()
+        public static String employeeName = "";
+        public Billing(String EmployeeName)
         {
             InitializeComponent();
             displayDataSet();
             getCarNumberList();
+            employeeName = EmployeeName;
         }
 
         SqlConnection Database = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\asela\\OneDrive\\Documents\\GMSDatabase.mdf;Integrated Security=True;Connect Timeout=30");
@@ -220,7 +222,7 @@ namespace GarageTuto
                 cmd.Parameters.AddWithValue("@Mf", mechanicsFeeInput.Text);
                 cmd.Parameters.AddWithValue("@Pf", totalPartsFees);
                 cmd.Parameters.AddWithValue("@Tf", totalFees);
-                cmd.Parameters.AddWithValue("@En", employeeName.Text);
+                cmd.Parameters.AddWithValue("@En", employeeName);
                 cmd.ExecuteNonQuery();
                 Database.Close();
                 displayDataSet();

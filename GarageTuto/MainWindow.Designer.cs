@@ -38,6 +38,7 @@
             carMenuLable = new Label();
             carPictureLogo = new PictureBox();
             mainPanel = new Panel();
+            UserName = new Label();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             SuspendLayout();
@@ -70,6 +71,7 @@
             logoutMenuLable.Size = new Size(82, 30);
             logoutMenuLable.TabIndex = 2;
             logoutMenuLable.Text = "Logout";
+            logoutMenuLable.Click += logoutMenuLable_Click;
             // 
             // analyticsMenuLable
             // 
@@ -161,11 +163,24 @@
             mainPanel.Size = new Size(1350, 729);
             mainPanel.TabIndex = 2;
             // 
+            // UserName
+            // 
+            UserName.AutoSize = true;
+            UserName.BackColor = Color.Black;
+            UserName.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            UserName.ForeColor = Color.White;
+            UserName.Location = new Point(1234, 13);
+            UserName.Name = "UserName";
+            UserName.Size = new Size(70, 17);
+            UserName.TabIndex = 3;
+            UserName.Text = "UserName";
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1350, 729);
+            Controls.Add(UserName);
             Controls.Add(menuPanel);
             Controls.Add(mainPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -176,6 +191,7 @@
             menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -189,5 +205,6 @@
         private Label carMenuLable;
         private PictureBox carPictureLogo;
         private Panel mainPanel;
+        private Label UserName;
     }
 }

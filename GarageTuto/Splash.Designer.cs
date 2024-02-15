@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splash));
             LoadingBar = new ProgressBar();
             label1 = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
+            loadingBarTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(23, 19);
+            label1.Location = new Point(23, 14);
             label1.Name = "label1";
             label1.RightToLeft = RightToLeft.No;
             label1.Size = new Size(277, 40);
@@ -65,7 +67,7 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(106, 59);
+            label2.Location = new Point(106, 54);
             label2.Name = "label2";
             label2.RightToLeft = RightToLeft.No;
             label2.Size = new Size(111, 40);
@@ -80,13 +82,17 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = Properties.Resources.gms_icons;
-            pictureBox1.Location = new Point(70, 124);
+            pictureBox1.Location = new Point(70, 122);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(184, 168);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             pictureBox1.UseWaitCursor = true;
+            // 
+            // loadingBarTimer
+            // 
+            loadingBarTimer.Tick += loadingBarTimer_Tick;
             // 
             // Splash
             // 
@@ -119,5 +125,6 @@
         private Label label1;
         private Label label2;
         private PictureBox pictureBox1;
+        private System.Windows.Forms.Timer loadingBarTimer;
     }
 }

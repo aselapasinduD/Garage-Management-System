@@ -100,6 +100,7 @@
             // 
             employeeSignIn.AutoSize = true;
             employeeSignIn.BackColor = Color.Transparent;
+            employeeSignIn.Cursor = Cursors.Hand;
             employeeSignIn.Font = new Font("Segoe UI", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
             employeeSignIn.Location = new Point(99, 310);
             employeeSignIn.Name = "employeeSignIn";
@@ -110,6 +111,7 @@
             // 
             // AdminLogin
             // 
+            AcceptButton = signInButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;

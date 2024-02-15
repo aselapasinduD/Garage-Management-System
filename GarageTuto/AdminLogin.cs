@@ -46,9 +46,10 @@ namespace GarageTuto
                     );
                 return;
             }
-            MainWindow mainWindow = new MainWindow();
+
+            MainWindow mainWindow = new MainWindow("Admin", "Admin");
             mainWindow.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }
