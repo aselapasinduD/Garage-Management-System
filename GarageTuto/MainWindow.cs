@@ -37,7 +37,8 @@ namespace GarageTuto
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
             base.OnFormClosed(e);
-            Application.Exit();
+            if (Role != "")
+                Application.Exit();
         }
 
         public void loadForm(object Form)
@@ -121,7 +122,8 @@ namespace GarageTuto
         {
             Login login = new Login();
             login.Show();
-            this.Hide();
+            Role = "";
+            this.Close();
         }
     }
 }

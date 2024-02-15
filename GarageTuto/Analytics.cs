@@ -19,7 +19,7 @@ namespace GarageTuto
             updateAnalytics();
         }
 
-        SqlConnection Database = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\asela\\OneDrive\\Documents\\GMSDatabase.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection Database = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"E:\\Work\\C# Projects\\Garage Management System\\GarageTuto\\GMSDatabase.mdf\";Integrated Security=True");
 
         private void updateAnalytics()
         {

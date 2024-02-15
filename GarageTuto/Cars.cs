@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Data.SqlClient;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace GarageTuto
 {
@@ -11,8 +12,8 @@ namespace GarageTuto
             InitializeComponent();
             displayDataSet();
         }
+        SqlConnection Database = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"E:\\Work\\C# Projects\\Garage Management System\\GarageTuto\\GMSDatabase.mdf\";Integrated Security=True");
 
-        SqlConnection Database = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\asela\\OneDrive\\Documents\\GMSDatabase.mdf;Integrated Security=True;Connect Timeout=30");
         string selectedRowCarNumber = "";
 
         //Car information Functions
