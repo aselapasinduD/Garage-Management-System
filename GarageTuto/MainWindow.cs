@@ -43,7 +43,11 @@ namespace GarageTuto
         public void loadForm(object Form)
         {
             if (this.mainPanel.Controls.Count > 0)
+            {
+                var Panel = this.mainPanel.Controls[0];
                 this.mainPanel.Controls.RemoveAt(0);
+                Panel.Dispose();
+            }
             Form form = Form as Form;
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
@@ -115,7 +119,9 @@ namespace GarageTuto
 
         private void logoutMenuLable_Click(object sender, EventArgs e)
         {
-
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }

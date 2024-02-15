@@ -37,8 +37,8 @@
             stockMenuLable = new Label();
             carMenuLable = new Label();
             carPictureLogo = new PictureBox();
-            mainPanel = new Panel();
             UserName = new Label();
+            mainPanel = new Panel();
             menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carPictureLogo).BeginInit();
             SuspendLayout();
@@ -154,15 +154,6 @@
             carPictureLogo.TabIndex = 1;
             carPictureLogo.TabStop = false;
             // 
-            // mainPanel
-            // 
-            mainPanel.BackColor = Color.Black;
-            mainPanel.Dock = DockStyle.Fill;
-            mainPanel.Location = new Point(0, 0);
-            mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(1350, 729);
-            mainPanel.TabIndex = 2;
-            // 
             // UserName
             // 
             UserName.AutoSize = true;
@@ -174,6 +165,16 @@
             UserName.Size = new Size(70, 17);
             UserName.TabIndex = 3;
             UserName.Text = "UserName";
+            // 
+            // mainPanel
+            // 
+            mainPanel.BackColor = Color.Black;
+            mainPanel.Dock = DockStyle.Fill;
+            mainPanel.ForeColor = Color.Black;
+            mainPanel.Location = new Point(0, 0);
+            mainPanel.Name = "mainPanel";
+            mainPanel.Size = new Size(1350, 729);
+            mainPanel.TabIndex = 4;
             // 
             // MainWindow
             // 
@@ -204,7 +205,7 @@
         private Label stockMenuLable;
         private Label carMenuLable;
         private PictureBox carPictureLogo;
-        private Panel mainPanel;
         private Label UserName;
+        private Panel mainPanel;
     }
 }

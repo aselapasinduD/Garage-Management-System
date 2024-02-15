@@ -92,6 +92,7 @@
             // 
             // loadingBarTimer
             // 
+            loadingBarTimer.Interval = 15;
             loadingBarTimer.Tick += loadingBarTimer_Tick;
             // 
             // Splash

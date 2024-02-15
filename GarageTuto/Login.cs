@@ -60,7 +60,6 @@ namespace GarageTuto
                 return;
             }
 
-            Debug.WriteLine(dataTabel.Rows[0][0]);
             if (dataTabel.Rows[0][0].ToString() == "1")
             {
                 MainWindow mainWindow = new MainWindow("Employee", employeeNameInput.Text);
