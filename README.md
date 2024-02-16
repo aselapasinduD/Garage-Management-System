@@ -1,9 +1,9 @@
 # Garage Management System
 
 - [X] Car service Listing
-- [ ] Spare part Listing
-- [ ] Employee
-- [ ] Bill Listing and issuing
+- [X] Spare part Listing
+- [X] Employee
+- [X] Bill Listing and issuing
 
 This software can manage you garage services and issuing bills.
 
