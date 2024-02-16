@@ -7,6 +7,6 @@
 
 This software can manage you garage services and issuing bills.
 
-This software has Admin mode. that admin can add employees to this software so employees can use this software to issue bills or and manage car services and spare parts.
+I'm creating this program as a working prototype for a big idea that will change the way garages are traditionally run. This prototype contains admin mode, which allows the admin to monitor and control all changes that employee does. and the administrator can add and remove employees. And etc.
 
 ![GMS Image](asserts/gms.png)
